@@ -405,7 +405,7 @@ body {
 }
 
 .header .logo .logo-text {
-    color: var(--white-color);
+    color: #0a4258;
     font-family: var(--font-title);
     font-size: 4rem;
     padding: 10px 0;
@@ -449,7 +449,7 @@ body {
 
 .header .nav .nav-menu li a {
     text-decoration: none;
-    color: var(--white-color);
+    color: #0a4258;
     font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
@@ -482,6 +482,7 @@ body {
     margin: 0;
     padding-top: 5px;
     font-style: italic;
+    font-weight: bold;
     color: #018abe;
     margin-bottom: 10px;
 }
@@ -632,7 +633,7 @@ body {
 
 /* Button styling */
 button {
-  background-color: #007bff; /* Button color */
+  background-color: #023264; /* Button color */
   color: white;
   border: none;
   padding: 10px 15px;
@@ -643,7 +644,7 @@ button {
 
 /* Button hover effect */
 button:hover {
-  background-color: #0056b3; /* Darker color on hover */
+  background-color: #0957ac; /* Darker color on hover */
 }
 
 /* Ensure links don't have default styles */
@@ -756,15 +757,32 @@ a button {
 
 footer {
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: #97cadb;
   text-align: center;
   border-top: 1px solid #e7e7e7;
+  color: #0a4258;
+  box-shadow: 0px -4px 10px #001B48;
 }
 
-.social-links a, .footer-nav a {
-  margin: 0 10px;
-  color: var(--font-color-title);
+.footer address {
+  font-style: normal;
+  line-height: 3rem;
+  font-size: large;
+}
+
+.footer p {
+  color: #0a4258;
+  font-size: large;
+}
+
+.social-links {
+  margin-bottom: 20px;
+}
+.social-links a, .footer-nav a, .footer p a {
+  margin: 24px 24px;
   text-decoration: none;
+  color: #0a4258;
+  font-size: large;
 }
 
 .social-links a:hover, .footer-nav a:hover {
@@ -774,8 +792,10 @@ footer {
 .back-to-top {
   display: block;
   margin-top: 15px;
-  color: #007bff;
   text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  color: #0a4258
 }
 
 .back-to-top:hover {
