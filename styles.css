@@ -547,7 +547,7 @@ body {
   }
 
   .header .nav .nav-menu .nav-item {
-    margin: 0 20px; /* Reduced margin between nav items */
+    margin: 0 10px; /* Reduced margin between nav items */
   }
 
   .nav-item a {
