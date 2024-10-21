@@ -1049,6 +1049,7 @@ a button {
 
   .project-body {
     flex: 1 1 100%;
+    flex-direction: column;
   }
 
   .project-body h3 {
