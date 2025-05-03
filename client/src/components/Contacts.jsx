@@ -3,11 +3,13 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 import ContactLink from "./ContactLink";
+import AboutInfo from "./AboutInfo";
 
 const initialState = {
   name: "",
@@ -16,14 +18,25 @@ const initialState = {
   message: "",
 };
 
-export default function Contacts() {
+export default function Contacts({ focusField }) {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setFocus,
   } = useForm({ defaultValues: initialState });
+
+  const handleClick = () => {
+    setFocus("name");
+  };
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (focusField?.name) {
+      setFocus(focusField.name);
+    }
+  }, [focusField, setFocus]);
 
   const onSubmit = async (data) => {
     const { name, email, subject, message } = data;
@@ -53,37 +66,76 @@ export default function Contacts() {
     }
   };
   return (
-    <section id="contact" className="section-container">
+    <section id="contact" className="section-container my-10 scroll-mt-24">
       <h2 className="section-title">
-        <span className="bg-primary text-background p-2 rounded-full">
+        <span className="bg-primary text-background p-2 rounded-lg">
           Get In
         </span>
         <span className="p-2">Touch</span>
       </h2>
-      <p>
+      <p className="w-full text-justify text-lg">
         I'm currently open to new opportunities, jobs and collaborations. Even
         if you just want to say hello, feel free to reach out.
       </p>
-      <div className=" section-container flex gap-10 flex-col md:flex-row m-5">
-        <div className="w-1/3 bg-accent p-5 rounded-lg flex flex-col gap-5">
+      <div className="mx-auto p-2 sm:px-6 lg:px-8 w-full flex gap-2 flex-col justify-center items-center md:flex-row m-5">
+        <div className="w-full  md:w-1/3 bg-accent py-23 px-5 rounded-lg flex flex-col gap-5">
           <p className="antialaised text-l">You can reach me on:</p>
 
-          <ContactLink title="Email" icon={Mail} href="uwattuko@gmail.com" />
-          <ContactLink
-            title="Github"
-            icon={Github}
-            href="https://github.com/Uko1995"
-          />
-          <ContactLink
-            title="Linkedin"
-            icon={LinkedinIcon}
-            href="https://www.linkedin.com/in/uwattuko"
-          />
+          <Button
+            variant="ghost"
+            className="justify-start border-2 m-2 p-7"
+            onClick={handleClick}
+          >
+            <div className="bg-accent-foreground rounded-lg p-2">
+              <Mail className="text-accent size-5" />
+            </div>
+            <div className="ms-3 cursor-pointer hover:scale-110 transition-scale duration-150">
+              <h3 className=" text-base text-primary">Email</h3>
+            </div>
+          </Button>
+          <Button
+            variant="ghost"
+            className="justify-start border-2 m-2 p-7"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = "https://github.com/Uko1995";
+              link.target = "_blank";
+              link.ariaLabel = "GitHub";
+              link.rel = "noopener noreferrer";
+              link.click();
+            }}
+          >
+            <div className="bg-accent-foreground rounded-lg p-2">
+              <Github className="text-accent size-5" />
+            </div>
+            <div className="ms-3 cursor-pointer hover:scale-110 transition-scale duration-150">
+              <h3 className=" text-base text-primary">GitHub</h3>
+            </div>
+          </Button>
+          <Button
+            variant="ghost"
+            className="justify-start border-2 m-2 p-7"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = "https://www.linkedin.com/in/uwattuko";
+              link.ariaLabel = "LinkedIn";
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+              link.click();
+            }}
+          >
+            <div className="bg-accent-foreground rounded-lg p-2">
+              <LinkedinIcon className="text-accent size-5" />
+            </div>
+            <div className="ms-3 cursor-pointer hover:scale-110 transition-scale duration-150">
+              <h3 className=" text-base text-primary">LinkedIn</h3>
+            </div>
+          </Button>
         </div>
         <form
           id="contact-form"
           onSubmit={handleSubmit(onSubmit)}
-          className="w-2/3 section-container bg-accent p-5 rounded-lg flex flex-col gap-5"
+          className="w-full md:w-2/3 section-container my-10 bg-accent p-5 rounded-lg flex flex-col gap-5"
         >
           <p className="antialaised text-l">
             Fill out this form to send me a message
@@ -96,7 +148,7 @@ export default function Contacts() {
               placeholder="Your name"
               required
               autoComplete="name"
-              className="text-ellipsis bg-background"
+              className="text-ellipsis bg-background scroll-mt-24"
             />
             {errors.name && <p>{errors.name.message}</p>}
           </div>
@@ -107,7 +159,7 @@ export default function Contacts() {
               {...register("email", {
                 required: "Email is required",
                 pattern: {
-                  value: "/S+@S+.S+/",
+                  value: /\S+@\S+\.\S+/,
                   message: "Does not match email format",
                 },
               })}
@@ -145,6 +197,7 @@ export default function Contacts() {
             {errors.message && <p>{errors.message.message}</p>}
           </div>
           <Button
+            asChild
             variant="default"
             type="submit"
             disabled={isSubmitting}
@@ -152,7 +205,12 @@ export default function Contacts() {
               isSubmitting ? "cursor-progress" : "cursor-pointer"
             } w-1/2 self-center`}
           >
-            <Send /> {isSubmitting ? "Sending" : "Send"}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Send /> {isSubmitting ? "Sending" : "Send"}
+            </motion.button>
           </Button>
           {isSubmitted && (
             <p className="text-green-500 m-2 ">Your message has been sent!</p>

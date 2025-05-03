@@ -1,43 +1,43 @@
 import ShortInfo from "./ShortInfo";
-import { ThumbsUp } from "lucide-react";
+import {
+  ArrowBigLeft,
+  ArrowRight,
+  CircleArrowRight,
+  ThumbsUp,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 
 import PageNav from "./Header";
+import Link from "./Link";
 
 export default function Introduction() {
   return (
-    <motion.section
-      initial={{ opacity: 0.5 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeInOut" }}
-      viewport={{ once: true }}
-      className="relative flex flex-1 flex-col md:flex-row gap-5 items-center-safe min-h-dvh justify-center mx-10"
-    >
-      <div className=" section-container block ml-5 gap-5 md:w-1/2 w-2/3">
-        <div className="flex-1 text-center md:text-left mb-10 md:mb-0">
-          <p className="italic text-primary/75 font-medium mb-2 animate-fade-in">
+    <section className="flex flex-col md:flex-row items-center gap-5  min-h-dvh justify-center">
+      <div className=" flex flex-col items-center md:items-start gap-5">
+        <div className="section-container flex-1 text-center md:text-left mb-10">
+          <p className="ml-1 text-primary/75 font-bold text-2xl mb-2">
             Hi, I'm
           </p>
           <motion.h1
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="font-bold tracking-widest text-4xl md:text-6xl lg:text-7xl text-primary mb-4 mt-4"
+            className="font-black my-5 tracking-wide text-4xl md:text-6xl  text-primary "
           >
             Uko Uwatt
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            // viewport={{ once: true }}
-            className="italic text-xl font-bold text-primary/75 md:text-2xl lg:text-3xl"
+            transition={{ duration: 1, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            className="italic mb-6 text-xl font-bold text-primary/75 md:text-2xl lg:text-3xl "
           >
-            Software Engineer | Web Developer
+            Software Engineer | FullStack Developer
           </motion.h2>
-          <p className="text-justify text-pretty">
+          <p className=" max-w-lg mx-auto md:mx-0 mb-8">
             I build exceptional and accessible digital experiences for the web.
             Passionate about creating intuitive and high-performance
             applications.
@@ -46,31 +46,47 @@ export default function Introduction() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="flex gap-15 justify-center items-center"
+            className="flex  gap-10 justify-center items-center"
           >
-            <Button size={"lg"}>
-              <a href="contact" className="font-bold">
-                Hire Me
+            <Button
+              variant="secondary"
+              className="m-1.5 p-6 hover:shadow-b-sm hover:shadow-muted-foreground"
+            >
+              <a
+                className="flex gap-2 items-center text-lg"
+                aria-label="link to projects"
+                href="#projects"
+              >
+                View Projects <ArrowRight />
               </a>
             </Button>
-            <Button>
-              <div className="flex gap-3 ">
-                <ThumbsUp />
-                <p className="font-bold">Available</p>
-              </div>
+            <Button className="m-1.5 p-6 hover:shadow-sm hover:shadow-muted-foreground">
+              <a
+                className="flex gap-2 items-center text-lg"
+                aria-label="link to contacts"
+                href="#contact"
+              >
+                Get in Touch
+              </a>
             </Button>
           </motion.div>
         </div>
       </div>
-      <div className="flex-1 flex justify-center items-center">
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className=""
+      >
         <div className="relative w-64 h-64 md:80 md:80 lg:w-96 lg:h-96">
           <div className="absolute inset-0 rounded-full bg-muted ">
             <div className="absolute inset-2 rounded-full bg-white overflow-hidden shadow-2xl">
-              <img className="" src="/uko.png" />
+              <img className="z-10" src="uko.webp" alt="uko" />
             </div>
           </div>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }

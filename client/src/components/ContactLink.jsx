@@ -5,7 +5,7 @@ export default function ContactLink({ title = "", href = "", icon: Icon }) {
         <Icon className="size-6" />
         <div className="flex flex-col">
           <a
-            href={title === "Email" ? `mailto:${href}` : href}
+            href={href}
             rel="noopener noreferrer"
             target="_blank"
             className="text-pretty/75 font-medium hover:text-primary/75 transition-colors duration-300"

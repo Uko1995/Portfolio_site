@@ -1,6 +1,18 @@
-export default function Link({ children, href = "", target = "" }) {
+export default function Link({
+  children,
+  href = "",
+  target = "",
+  onEmailClick = () => {},
+}) {
   return (
-    <a href={href} rel="noopener noreferrer" target={target}>
+    <a
+      aria-label={`Link to ${href}`}
+      href={href}
+      onClick={onEmailClick}
+      rel="noopener noreferrer"
+      target={target}
+      className="cursor-pointer"
+    >
       {children}
     </a>
   );
