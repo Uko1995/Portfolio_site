@@ -1,11 +1,10 @@
 import { GithubIcon, LinkedinIcon, LucideLinkedin, Mail } from "lucide-react";
-import styles from "./Footer.module.css";
 import { BsTwitterX } from "react-icons/bs";
 import Link from "./Link";
 
 export default function Footer({ onEmailClick }) {
   return (
-    <footer className={`${styles.footer}`}>
+    <footer className="">
       <div className="flex justify-center items-center  md:justify-between gap-2 flex-col md:flex-row">
         <div className="block text-left">
           <h2 className="font-bold text-2xl text-center md:text-start bg-clip-content">

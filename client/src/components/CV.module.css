@@ -1,8 +1,0 @@
-.cv {
-  border-bottom: 2px solid transparent;
-  color: var(--color-chart-1) !important;
-}
-.cv:hover {
-  border-bottom: 2px solid var(--color-chart-1) !important;
-  color: var(--color-chart-1) !important;
-}

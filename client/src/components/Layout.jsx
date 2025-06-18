@@ -14,23 +14,13 @@ export default function Layout() {
     timestamp: 0,
   });
   return (
-    <div
-      id="home"
-      className=" min-h-screen"
-      style={{ fontFamily: "Lato, sans-serif" }}
-    >
+    <main id="home">
       <Header />
       <Hero />
       <About />
       <Projects />
       <Skills />
-      <Contacts focusField={focusField} />
-      <Footer
-        onEmailClick={(e) => {
-          e.preventDefault();
-          setFocusField({ name: "email", timestamp: Date.now() });
-        }}
-      />
-    </div>
+      <Contacts focusField={focusField} setFocusField={setFocusField} />
+    </main>
   );
 }

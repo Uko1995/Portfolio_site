@@ -21,7 +21,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="section-container mt-10 scroll-mt-24 bg-[url(./pixels.jpg)] bg-fixed bg-cover bg-no-repeat bg-center text-accent"
+      className="container mt-10 scroll-mt-24 bg-[url(./pixels.jpg)] bg-cover bg-fixed bg-center bg-no-repeat text-accent"
     >
       <div className="inset-0">
         <h1 className="section-title">Projects</h1>

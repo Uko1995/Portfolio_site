@@ -12,15 +12,15 @@ export default function Skills() {
       viewport={{ once: true }}
       exit={{ opacity: 0, y: 50 }}
       id="skills"
-      className="section-container my-10 scroll-mt-22 text-foreground"
+      className="container my-10 scroll-mt-22 text-foreground"
     >
-      <h2 className="section-title">Skills & Expertise</h2>
-      <div className=" w-full inline-grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+      <h2>Skills & Expertise</h2>
+      <div className="inline-grid w-full grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2">
         <div className="flex flex-col gap-5">
-          <h3 className=" text-lg font-bold text-muted-foreground">
+          <h3 className="text-lg font-bold text-muted-foreground">
             FrontEnd Development
           </h3>
-          <div className="flex flex-wrap gap-5 m-5">
+          <div className="m-5 flex flex-wrap gap-5">
             {techStack
               .filter((skill) => skill.section === "frontend")
               .map((skill, i) => (
@@ -29,10 +29,10 @@ export default function Skills() {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <h3 className=" text-lg font-bold text-muted-foreground">
+          <h3 className="text-lg font-bold text-muted-foreground">
             Backend Development
           </h3>
-          <div className="flex flex-wrap gap-5 m-5  ">
+          <div className="m-5 flex flex-wrap gap-5">
             {techStack
               .filter((skill) => skill.section === "backend")
               .map((skill, i) => (
@@ -41,8 +41,8 @@ export default function Skills() {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <h3 className=" text-lg font-bold text-muted-foreground">Database</h3>
-          <div className="flex flex-wrap gap-5 m-5 ">
+          <h3 className="text-lg font-bold text-muted-foreground">Database</h3>
+          <div className="m-5 flex flex-wrap gap-5">
             {techStack
               .filter((skill) => skill.section === "database")
               .map((skill, i) => (
@@ -51,10 +51,10 @@ export default function Skills() {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <h3 className=" text-lg font-bold text-muted-foreground">
+          <h3 className="text-lg font-bold text-muted-foreground">
             Other Tools
           </h3>
-          <div className="flex flex-wrap gap-5 m-5 ">
+          <div className="m-5 flex flex-wrap gap-5">
             {techStack
               .filter((skill) => skill.section === "tools")
               .map((skill, i) => (
