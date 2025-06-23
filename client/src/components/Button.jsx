@@ -1,5 +1,6 @@
 export default function Button({
   children,
+  style = "",
   type = "primary",
   size = "nml",
   onClick,
@@ -19,6 +20,8 @@ export default function Button({
       "bg-gray-200 border-1 border-transparent hover:bg-gray-300 dark:bg-gray-300 dark:hover:bg-gray-200 text-gray-800",
     outline:
       "border-1 border-foreground text-foreground hover:text-foreground/80 hover:bg-foreground/10 dark:text-foreground",
+    submit:
+      "bg-primary border-1 border-transparent hover:bg-foreground text-background hover:text-background/80 dark:bg-primary dark:hover:bg-foreground dark:text-background",
   };
 
   const sizes = {
@@ -29,7 +32,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`flex cursor-pointer items-center justify-center gap-2 rounded-md font-bold ${types[type]} ${sizes[size]}`}
+      className={`${style} flex cursor-pointer items-center justify-center gap-2 rounded-md font-bold ${types[type]} ${sizes[size]}`}
     >
       {children}
     </button>

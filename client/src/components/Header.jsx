@@ -16,10 +16,11 @@ import MapPin from "./MapPin";
 import DarkModeToggle from "./DarkModeToggle";
 
 const links = [
-  { name: "HOME", href: "#home" },
-  { name: "PROJECTS", href: "#projects" },
-  { name: "SKILLS", href: "#skills" },
-  { name: "CONTACT", href: "#contact" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contacts", href: "#contact" },
 ];
 
 export default function Header() {
@@ -31,7 +32,7 @@ export default function Header() {
       <a
         href="#home"
         aria-label="home"
-        className="font-cinzel text-base font-black md:text-xl"
+        className="bg-gradient-to-r from-foreground to-sidebar-ring bg-clip-text font-cinzel font-black text-transparent md:text-xl"
       >
         <span>UKO</span>
         <span>UWATT</span>
@@ -39,13 +40,13 @@ export default function Header() {
 
       <div className="flex items-center justify-end space-x-1">
         {/* Desktop navigation */}
-        <nav className="hidden items-center space-x-8 md:flex">
+        <nav className="hidden items-center space-x-8 text-sm md:flex">
           {links.map((link) => (
             <a
               aria-label={link.name}
               key={link.name}
               href={link.href}
-              className="scroll-margin-top border-b border-transparent text-sm transition-colors duration-200 hover:border-b-accent-foreground md:text-base"
+              className="scroll-margin-top border-b border-transparent font-semibold transition-colors duration-200 hover:border-b-accent-foreground md:text-base"
             >
               {link.name}
             </a>

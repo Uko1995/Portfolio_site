@@ -123,7 +123,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply scroll-smooth border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
@@ -135,13 +135,11 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(255, 255, 255, 0.2),
-      transparent 70%
-    );
-    backdrop-filter: blur(20px);
-    z-index: 1;
+    border-radius: var(--radius);
     pointer-events: none;
+    z-index: 1;
+    mask-image: radial-gradient(circle, transparent 60%, black 100%);
+    -webkit-mask-image: radial-gradient(circle, transparent 60%, black 100%);
+    backdrop-filter: blur(20px);
   }
 }

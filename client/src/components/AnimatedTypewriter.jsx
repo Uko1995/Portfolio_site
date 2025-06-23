@@ -7,7 +7,11 @@ const titles = [
   "FULLSTACK DEVELOPER",
 ];
 
-const colors = ["text-gray-900", "text-gray-700", "text-gray-500"];
+const lightColors = ["text-gray-800"];
+const darkColors = ["text-gray-350"];
+const colors = document.documentElement.classList.contains("dark")
+  ? darkColors
+  : lightColors;
 
 export default function AnimatedTypewriter() {
   const [index, setIndex] = useState(0);

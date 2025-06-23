@@ -7,63 +7,33 @@ import Button from "./Button";
 
 export default function About() {
   return (
-    <section className="container mx-10 my-10 scroll-mt-22" id="about">
-      <h1 className="section-title">About Me</h1>
-      <div className="flex flex-col gap-5 md:flex-row">
-        <div className="flex w-full flex-col items-center">
-          <p className="mb-4 text-lg">
+    <section className="container mx-10 my-15 scroll-mt-24" id="about">
+      <h1 className="mx-auto w-fit px-5 py-2 text-2xl font-bold text-primary">
+        About Me
+      </h1>
+      <div className="flex flex-col gap-5 rounded-lg bg-secondary p-5 md:flex-row">
+        <div className="flex w-full flex-col items-center justify-center md:max-w-3xl">
+          <p className="mb-4 text-base">
             I'm a passionate software engineer and fullstack developer with a
             strong foundation in modern technologies. My journey into coding
             began with curiosity and has evolved into a dedicated career path.
           </p>
-          <p className="mb-4 text-lg">
+          <p className="mb-4 text-base">
             I specialize in building responsive web applications with React,
             creating RESTful APIs, and designing efficient database structures.
             I enjoy solving complex problems and turning ideas into reality
             through clean, maintainable code.
           </p>
         </div>
-        <motion.div
-          initial={{ y: 100 }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 1, type: "spring" }}
-          viewport={{ once: true }}
-          className="flex w-full flex-col items-start justify-start rounded-lg bg-accent md:w-2/6"
-        >
-          <AboutInfo>
-            <div className="rounded-lg bg-primary p-3">
-              <Code className="text-background" />
+        <div className="">
+          <div className="md:80 md:80 relative h-64 w-64 lg:h-96 lg:w-96">
+            <div className="absolute inset-0 rounded-full bg-muted">
+              <div className="absolute inset-2 overflow-hidden rounded-full bg-white shadow-2xl">
+                <img className="z-10" src="uko.webp" alt="uko" />
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold text-primary">Coding Journey</h3>
-              <p className="text-base text-primary/75 italic">
-                Software Engineer
-              </p>
-            </div>
-          </AboutInfo>
-          <AboutInfo>
-            <div className="rounded-lg bg-primary p-3">
-              <Lightbulb className="text-background" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-primary">Problem Solver</h3>
-              <p className="text-base text-primary/75 italic">
-                Creative and analytical thinking
-              </p>
-            </div>
-          </AboutInfo>
-          <AboutInfo>
-            <div className="rounded-lg bg-primary p-3">
-              <BookOpen className="text-background" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-primary">Continuous Learner</h3>
-              <p className="text-base text-primary/75 italic">
-                Always expanding knowledge and skills
-              </p>
-            </div>
-          </AboutInfo>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
