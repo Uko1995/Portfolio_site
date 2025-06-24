@@ -1,14 +1,7 @@
-import { BookOpen, Check, Code, Code2, Lightbulb } from "lucide-react";
-import { motion } from "framer-motion";
-
-import ShortInfo from "@/components/ShortInfo";
-import AboutInfo from "./AboutInfo";
-import Button from "./Button";
-
 export default function About() {
   return (
-    <section className="container mx-10 my-15 scroll-mt-24" id="about">
-      <h1 className="mx-auto w-fit px-5 py-2 text-2xl font-bold text-primary">
+    <section className="mx-10 my-15 scroll-mt-24" id="about">
+      <h1 className="mx-auto w-fit px-5 py-2 text-2xl font-bold text-primary/90">
         About Me
       </h1>
       <div className="flex flex-col gap-5 rounded-lg bg-secondary p-5 md:flex-row">

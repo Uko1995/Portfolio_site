@@ -27,7 +27,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <section
-      className={`sticky top-5 z-50 container mx-auto flex w-[90%] scroll-mt-20 items-center justify-between rounded-sm border-1 p-2.5 shadow-lg ${isMenuOpen ? "bg-gray-100" : ""} backdrop-blur-lg md:w-[85%] lg:w-[95%]`}
+      className={`sticky top-3 z-50 container mx-auto flex w-[90%] scroll-mt-20 items-center justify-between rounded-sm border-1 p-2.5 shadow-lg ${isMenuOpen ? "bg-gray-100" : ""} backdrop-blur-lg md:w-[85%] lg:w-[95%]`}
     >
       <a
         href="#home"

@@ -16,6 +16,7 @@ import {
   SiVercel,
   SiExpress,
   SiJavascript,
+  SiSupabase,
 } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandVite } from "react-icons/tb";
@@ -46,8 +47,9 @@ export const techStack = [
   { img: TbBrandVite, name: "Vite", section: "frontend", color: "#646CFF" },
   {
     img: RiTailwindCssFill,
-    name: "TailwindCss",
+    name: "Tailwind",
     section: "frontend",
     color: "#38B2AC",
   },
+  { img: SiSupabase, name: "Supabase", section: "database", color: "#3ECF8E" },
 ];

@@ -20,7 +20,7 @@ export default function Contacts() {
       id="contact"
       className="mt-15 mb-0 flex scroll-mt-24 flex-col items-center justify-center gap-30 bg-muted px-5 py-10 text-muted-foreground sm:px-10 md:px-20 lg:px-32 xl:px-40"
     >
-      <div>
+      <div className="flex w-full flex-col items-center justify-center">
         <h2 className="mx-auto my-5 w-fit px-5 py-2 text-2xl font-bold text-primary">
           Let's Connect
         </h2>
@@ -29,7 +29,7 @@ export default function Contacts() {
           new opportunities, collaborations, or even a friendly chat. Feel free
           to reach out through any of the platforms below.
         </p>
-        <div className="text mx-auto mt-5 flex w-2/3 flex-col items-center justify-center rounded-lg bg-primary p-2 text-primary-foreground">
+        <div className="text mx-auto mt-5 flex w-full flex-col items-center justify-center rounded-lg bg-primary p-2 text-primary-foreground">
           <p className="antialaised text-base">You can connect with me on:</p>
           <div className="flex w-full flex-col items-center justify-center gap-5 p-5">
             <Button

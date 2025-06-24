@@ -5,7 +5,9 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import Button from "./Button";
-import { LoaderCircle, Send, SendHorizonal } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
+import ClearInputButton from "./ClearInputButton";
+import FormErrorMessage from "./FormErrorMessage";
 
 const initialState = {
   name: "",
@@ -20,7 +22,9 @@ export default function Form() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm({ defaultValues: initialState });
+    setValue,
+    watch,
+  } = useForm({ defaultValues: initialState, mode: "onChange" });
 
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_EMAILJS_PRIVATE_KEY);
@@ -58,12 +62,12 @@ export default function Form() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="my-10 flex w-full flex-col gap-5 rounded-lg bg-accent p-5 font-semibold text-accent-foreground md:w-2/3"
+      className="flex w-full flex-col gap-5 rounded-lg bg-accent p-5 font-semibold text-accent-foreground md:w-2/3"
     >
       <p className="antialaised text-center text-lg">
         Fill out this form to send me a message
       </p>
-      <div className="flex flex-col gap-2">
+      <div className="relative flex flex-col gap-2">
         <Label htmlFor="name">Name</Label>
         <Input
           disabled={isSubmitting}
@@ -74,9 +78,17 @@ export default function Form() {
           autoComplete="name"
           className="scroll-mt-24 bg-background text-ellipsis"
         />
-        {errors.name && <p>{errors.name.message}</p>}
+        {watch("name")?.length > 0 && (
+          <ClearInputButton
+            isSubmitting={isSubmitting}
+            onClick={() => setValue("name", "", { shouldValidate: true })}
+          />
+        )}
+        {errors.name && (
+          <FormErrorMessage>{errors.name.message}</FormErrorMessage>
+        )}
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="relative flex flex-col gap-2">
         <Label htmlFor="email">Email</Label>
         <Input
           disabled={isSubmitting}
@@ -93,9 +105,17 @@ export default function Form() {
           autoComplete="email"
           className="bg-background text-ellipsis"
         />
-        {errors.email && <p>{errors.email.message}</p>}
+        {watch("email")?.length > 0 && (
+          <ClearInputButton
+            isSubmitting={isSubmitting}
+            onClick={() => setValue("email", "", { shouldValidate: true })}
+          />
+        )}
+        {errors.email && (
+          <FormErrorMessage>{errors.email.message}</FormErrorMessage>
+        )}
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="relative flex flex-col gap-2">
         <Label htmlFor="subject">Subject</Label>
         <Input
           disabled={isSubmitting}
@@ -108,9 +128,17 @@ export default function Form() {
           autoComplete="subject"
           className="bg-background text-ellipsis"
         />
-        {errors.subject && <p>{errors.subject.message}</p>}
+        {watch("subject")?.length > 0 && (
+          <ClearInputButton
+            isSubmitting={isSubmitting}
+            onClick={() => setValue("subject", "", { shouldValidate: true })}
+          />
+        )}
+        {errors.subject && (
+          <FormErrorMessage>{errors.subject.message}</FormErrorMessage>
+        )}
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="relative flex flex-col gap-2">
         <Label htmlFor="message">Message</Label>
         <Textarea
           disabled={isSubmitting}
@@ -121,7 +149,15 @@ export default function Form() {
           autoComplete="message"
           className="bg-background text-ellipsis"
         />
-        {errors.message && <p>{errors.message.message}</p>}
+        {watch("message")?.length > 0 && (
+          <ClearInputButton
+            isSubmitting={isSubmitting}
+            onClick={() => setValue("message", "", { shouldValidate: true })}
+          />
+        )}
+        {errors.message && (
+          <FormErrorMessage>{errors.message.message}</FormErrorMessage>
+        )}
       </div>
       <Button
         asChild
