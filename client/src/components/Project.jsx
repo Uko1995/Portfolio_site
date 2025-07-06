@@ -21,26 +21,26 @@ export default function Project({ project }) {
     linkToLive,
   } = project;
   return (
-    <div className="relative overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
+    <div className="relative h-fit overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
       <div className="absolute top-4 right-5 z-10 rounded-full bg-gradient-to-br from-fuchsia-500 to-chart-1 px-7 py-1.5 tracking-widest capitalize">
         {type}
       </div>
       {/* Image */}
       {image.length > 0 ? (
         <img
-          className="h-fit w-full object-cover hover:scale-105 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out"
+          className="h-1/2 w-full object-cover hover:scale-105 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out"
           src={image}
           alt={name}
           loading="lazy"
         />
       ) : (
-        <div className="flex h-60 w-full items-center justify-center bg-muted-foreground/30 text-4xl">
+        <div className="flex h-1/2 w-full items-center justify-center bg-muted-foreground/30 text-4xl">
           {name}
         </div>
       )}
 
       {/* Content */}
-      <div className="border-t-2 border-accent-foreground/20 p-4 backdrop-blur-lg">
+      <div className="h-fit border-t-2 border-accent-foreground/20 p-4 backdrop-blur-lg">
         <h2 className="mb-2 text-2xl font-bold md:text-xl">{name}</h2>
         <hr className="mb-2 border-accent-foreground/20" />
         <p className="mb-2 text-lg md:text-base">{description}</p>

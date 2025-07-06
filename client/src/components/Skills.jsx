@@ -12,7 +12,7 @@ import SkillsCard from "./SkillsCard";
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-10 my-15 min-h-screen scroll-mt-24">
+    <section id="skills" className="mx-2 my-30 min-h-screen scroll-mt-24">
       <h1 className="w-full px-5 py-2 pb-7 text-center text-4xl font-bold text-primary/90 md:text-3xl">
         Skills & Expertise
       </h1>

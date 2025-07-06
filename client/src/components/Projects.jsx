@@ -64,12 +64,15 @@ const ProjectData = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="my-15 scroll-mt-24 py-10 text-primary">
+    <section
+      id="projects"
+      className="my-30 min-h-dvh scroll-mt-24 py-5 text-primary"
+    >
       <h1 className="mx-auto mb-8 w-fit px-5 py-2 text-4xl font-bold md:text-3xl">
         Projects
       </h1>
       <div className="p-5">
-        <div className="mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <div className="mx-2 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {ProjectData.map((project) => (
             <Project key={project.name} project={project} />
           ))}
