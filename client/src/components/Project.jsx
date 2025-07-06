@@ -22,8 +22,8 @@ export default function Project({ project }) {
   } = project;
   return (
     <div className="relative flex flex-col overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
-      <div className="absolute top-4 right-5 z-10 rounded-full bg-gradient-to-br from-fuchsia-500 to-chart-1 px-7 py-1.5 tracking-widest capitalize">
-        {type}
+      <div className="absolute top-4 right-5 z-10 rounded-full bg-gradient-to-r from-blue-700 to-chart-1 px-7 py-1.5 tracking-widest capitalize">
+        <p className="text-white">{type}</p>
       </div>
       {/* Image */}
       <div className="h-1/2 w-full overflow-hidden">
@@ -45,7 +45,7 @@ export default function Project({ project }) {
       <div className="p-4 backdrop-blur-lg">
         <h2 className="mb-2 text-2xl font-bold md:text-xl">{name}</h2>
         <hr className="mb-2 border-accent-foreground/20" />
-        <p className="mb-2 text-base">{description}</p>
+        <p className="mb-2 text-sm md:text-base">{description}</p>
         <hr className="mb-2 border-accent-foreground/20" />
 
         <div className="flex flex-wrap items-center justify-start gap-2">
@@ -53,7 +53,7 @@ export default function Project({ project }) {
             <SkillName key={skill} skill={skill} />
           ))}
         </div>
-        <div className="mt-5 flex items-center justify-center gap-5">
+        <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">
           <Button
             onClick={() => window.open(linkToGitHub, "_blank")}
             type="primary"

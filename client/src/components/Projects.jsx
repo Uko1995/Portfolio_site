@@ -66,7 +66,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="my-30 min-h-dvh scroll-mt-24 py-5 text-primary"
+      className="mx-5 my-30 min-h-dvh scroll-mt-24 py-5 text-primary"
     >
       <h1 className="mx-auto mb-8 w-fit px-5 py-2 text-4xl font-bold md:text-3xl">
         Projects
