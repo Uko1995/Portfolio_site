@@ -23,7 +23,7 @@ export default function Project({ project }) {
   return (
     <div className="relative flex flex-col overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
       <div className="absolute top-4 right-5 z-10 rounded-full bg-gradient-to-r from-blue-700 to-chart-1 px-7 py-1.5 tracking-widest capitalize">
-        <p className="text-white">{type}</p>
+        <p className="text-sm text-white">{type}</p>
       </div>
       {/* Image */}
       <div className="h-1/2 w-full overflow-hidden">
@@ -43,7 +43,7 @@ export default function Project({ project }) {
 
       {/* Content */}
       <div className="p-4 backdrop-blur-lg">
-        <h2 className="mb-2 text-2xl font-bold md:text-xl">{name}</h2>
+        <h2 className="mb-2 text-lg font-bold">{name}</h2>
         <hr className="mb-2 border-accent-foreground/20" />
         <p className="mb-2 text-sm md:text-base">{description}</p>
         <hr className="mb-2 border-accent-foreground/20" />

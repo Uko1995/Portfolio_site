@@ -84,7 +84,7 @@ export default function Header() {
         {/* mobile navigation */}
         {isMenuOpen && (
           <nav className="absolute top-full right-0 left-0 animate-collapsible-down bg-background shadow-md transition-all duration-300 md:hidden">
-            <div className="container mx-auto flex min-h-screen flex-col items-center space-y-1 px-4 py-4">
+            <div className="container mx-auto flex flex-col items-center space-y-1 px-4 py-4">
               {links.map((item) => (
                 <>
                   <a

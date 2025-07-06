@@ -15,7 +15,8 @@ const ViewMore = () => (
         size="lg"
         onClick={() => window.open(GITHUB_URL, "_blank")}
       >
-        <FaSquareGithub size={20} /> <span>View more</span>
+        <FaSquareGithub size={20} />{" "}
+        <span className="text-base">View more</span>
       </Button>
       <Button
         onClick={() => {
@@ -27,7 +28,7 @@ const ViewMore = () => (
         style="px-4 border-2 border-muted/50 "
         type="outline"
       >
-        <span className="text-background">Let's Collaborate</span>
+        <span className="text-base text-background">Let's Collaborate</span>
       </Button>
     </div>
   </div>
