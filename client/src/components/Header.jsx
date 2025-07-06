@@ -14,25 +14,32 @@ import { useState } from "react";
 import Button from "./Button";
 import MapPin from "./MapPin";
 import DarkModeToggle from "./DarkModeToggle";
+import useScrollSpy from "@/hooks/useScrollSpy";
 
 const links = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
   { name: "Contacts", href: "#contact" },
 ];
 
 export default function Header() {
+  const isActiveId =
+    useScrollSpy({
+      sectionIds: links.map((link) => link.href.replace("#", "")),
+      threshold: 0.3,
+    }) || "home";
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <section
-      className={`sticky top-3 z-50 container mx-auto flex w-[90%] scroll-mt-20 items-center justify-between rounded-sm border-1 p-2.5 shadow-lg ${isMenuOpen ? "bg-gray-100" : ""} backdrop-blur-lg md:w-[85%] lg:w-[95%]`}
+      className={`sticky top-3 z-50 container mx-auto flex w-[90%] scroll-mt-20 items-center justify-between rounded-sm border-1 p-2.5 shadow-lg sm:bg-background ${isMenuOpen ? "bg-gray-100" : ""} backdrop-blur-lg md:w-[85%] lg:w-[95%]`}
     >
       <a
         href="#home"
         aria-label="home"
-        className="bg-gradient-to-r from-foreground to-sidebar-ring bg-clip-text font-cinzel font-black text-transparent md:text-xl"
+        className="bg-gradient-to-r from-foreground to-sidebar-ring bg-clip-text font-cinzel text-2xl font-black text-transparent md:text-xl"
       >
         <span>UKO</span>
         <span>UWATT</span>
@@ -46,7 +53,7 @@ export default function Header() {
               aria-label={link.name}
               key={link.name}
               href={link.href}
-              className="scroll-margin-top border-b border-transparent font-semibold transition-colors duration-200 hover:border-b-accent-foreground md:text-base"
+              className={`scroll-margin-top border-b border-transparent font-semibold transition-colors duration-200 hover:border-b-accent-foreground md:text-base ${isActiveId === link.href.replace("#", "") ? "bg-blue-600 px-2 py-1 text-background" : ""}`}
             >
               {link.name}
             </a>
@@ -76,32 +83,36 @@ export default function Header() {
         </button>
         {/* mobile navigation */}
         {isMenuOpen && (
-          <nav className="animate-fade-in absolute top-full right-0 left-0 bg-gray-100 shadow-md md:hidden">
-            <div className="container mx-auto flex flex-col items-center space-y-1 px-4 py-4">
+          <nav className="absolute top-full right-0 left-0 animate-collapsible-down bg-background shadow-md transition-all duration-300 md:hidden">
+            <div className="container mx-auto flex min-h-screen flex-col items-center space-y-1 px-4 py-4">
               {links.map((item) => (
-                <a
-                  aria-label={item.name}
-                  key={item.name}
-                  href={item.href}
-                  className="nav-link block py-2 font-bold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+                <>
+                  <a
+                    aria-label={item.name}
+                    key={item.name}
+                    href={item.href}
+                    className="nav-link block py-2 text-xl font-bold"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                </>
               ))}
               <div className="flex w-full flex-col space-y-2">
                 <Button
                   type="outline"
+                  style="text-xl"
                   onClick={() => {
                     window.open("/Uko_Uwatt.pdf", "_blank");
                     setIsMenuOpen(false);
                   }}
                 >
-                  <FileText className="my-1" size={16} />
+                  <FileText className="my-1" size={20} />
                   View Resume
                 </Button>
                 <Button
                   type="primary"
+                  style="text-xl"
                   onClick={() => {
                     const link = document.createElement("a");
                     link.href = "/Uko_Uwatt.pdf";
@@ -110,7 +121,7 @@ export default function Header() {
                     setIsMenuOpen(false);
                   }}
                 >
-                  <Download className="my-1" size={16} />
+                  <Download className="my-1" size={20} />
                   Download Resume
                 </Button>
               </div>

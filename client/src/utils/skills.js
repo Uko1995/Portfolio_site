@@ -1,6 +1,12 @@
 import { ImHtmlFive2 } from "react-icons/im";
 import { DiRedis } from "react-icons/di";
-import { FaReact, FaGitAlt, FaLinux, FaCuttlefish } from "react-icons/fa6";
+import {
+  FaReact,
+  FaGitAlt,
+  FaLinux,
+  FaCuttlefish,
+  FaBootstrap,
+} from "react-icons/fa6";
 import {
   IoLogoCss3,
   IoLogoNodejs,
@@ -27,15 +33,15 @@ export const techStack = [
   {
     img: SiJavascript,
     name: "JavaScript",
-    section: "frontend",
+    section: "languages",
     color: "#F7DF1E",
   },
   { img: FaReact, name: "React", section: "frontend", color: "#61DAFB" },
   { img: IoLogoNodejs, name: "NodeJs", section: "backend", color: "#8CC84B" },
   { img: SiExpress, name: "Express", section: "backend", color: "#000000" },
-  { img: IoLogoPython, name: "Python", section: "backend", color: "#3776AB" },
+  { img: IoLogoPython, name: "Python", section: "languages", color: "#3776AB" },
   { img: SiFlask, name: "Flask", section: "backend", color: "#000000" },
-  { img: FaCuttlefish, name: "C", section: "Others", color: "#A8B9CC" },
+  { img: FaCuttlefish, name: "C", section: "languages", color: "#A8B9CC" },
   { img: SiMysql, name: "MySQL", section: "database", color: "#00758F" },
   { img: SiMongodb, name: "MongoDB", section: "database", color: "#47A248" },
   { img: DiRedis, name: "Redis", section: "database", color: "#D82C20" },
@@ -47,9 +53,29 @@ export const techStack = [
   { img: TbBrandVite, name: "Vite", section: "frontend", color: "#646CFF" },
   {
     img: RiTailwindCssFill,
-    name: "Tailwind",
+    name: "TailwindCSS",
     section: "frontend",
     color: "#38B2AC",
   },
   { img: SiSupabase, name: "Supabase", section: "database", color: "#3ECF8E" },
+  {
+    img: FaBootstrap,
+    name: "Bootstrap",
+    section: "frontend",
+    color: "#7952B3",
+  },
 ];
+
+export const SkillsText = {
+  frontend: `I have a strong foundation in HTML, CSS, and JavaScript, with
+          experience in frameworks like React and TailwindCss. I am also
+          proficient in responsive web design, search engine optimization and accessibility best practices.`,
+  backend:
+    "I have experience working with Node.js and Express for building RESTful APIs, as well as Python and Flask for server-side development. I am familiar with authentication, database integration, and deploying backend services.",
+  database:
+    "I have worked with both SQL and NoSQL databases, including MySQL, Supabase, and MongoDB. I understand data modeling, querying, and optimization techniques.",
+  tools:
+    "I am proficient in using Git for version control, and I have experience with tools like Postman for API testing and Vercel for deployment.",
+  languages:
+    "I am comfortable with multiple programming languages, including JavaScript, Python and C. I can adapt to new languages and technologies as needed.",
+};

@@ -23,8 +23,12 @@ export default function Form() {
     formState: { errors, isSubmitting },
     reset,
     setValue,
+    clearErrors,
     watch,
-  } = useForm({ defaultValues: initialState, mode: "onChange" });
+  } = useForm({
+    defaultValues: initialState,
+    mode: "onChange",
+  });
 
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_EMAILJS_PRIVATE_KEY);
@@ -62,13 +66,13 @@ export default function Form() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="flex w-full flex-col gap-5 rounded-lg bg-accent p-5 font-semibold text-accent-foreground md:w-2/3"
+      className="flex w-full flex-col gap-5 rounded-lg bg-accent p-5 text-xl font-semibold text-accent-foreground md:w-2/3"
     >
-      <p className="antialaised text-center text-lg">
-        Fill out this form to send me a message
-      </p>
-      <div className="relative flex flex-col gap-2">
-        <Label htmlFor="name">Name</Label>
+      <p className="antialaised text-center">Fill the form to send a message</p>
+      <div className="relative flex w-2/3 flex-col gap-2">
+        <Label className="text-xl" htmlFor="name">
+          Name
+        </Label>
         <Input
           disabled={isSubmitting}
           id="name"
@@ -76,12 +80,15 @@ export default function Form() {
           placeholder="Your name"
           required
           autoComplete="name"
-          className="scroll-mt-24 bg-background text-ellipsis"
+          className="scroll-mt-24 bg-input text-xl text-ellipsis"
         />
         {watch("name")?.length > 0 && (
           <ClearInputButton
             isSubmitting={isSubmitting}
-            onClick={() => setValue("name", "", { shouldValidate: true })}
+            onClick={() => {
+              setValue("name", "");
+              clearErrors("name");
+            }}
           />
         )}
         {errors.name && (
@@ -89,7 +96,9 @@ export default function Form() {
         )}
       </div>
       <div className="relative flex flex-col gap-2">
-        <Label htmlFor="email">Email</Label>
+        <Label className="text-xl" htmlFor="email">
+          Email
+        </Label>
         <Input
           disabled={isSubmitting}
           id="email"
@@ -100,15 +109,18 @@ export default function Form() {
               message: "Does not match email format",
             },
           })}
-          placeholder="Your email"
+          placeholder="sample@gmail.com"
           required
           autoComplete="email"
-          className="bg-background text-ellipsis"
+          className="bg-input text-xl text-ellipsis"
         />
         {watch("email")?.length > 0 && (
           <ClearInputButton
             isSubmitting={isSubmitting}
-            onClick={() => setValue("email", "", { shouldValidate: true })}
+            onClick={() => {
+              setValue("email", "");
+              clearErrors("email");
+            }}
           />
         )}
         {errors.email && (
@@ -116,7 +128,9 @@ export default function Form() {
         )}
       </div>
       <div className="relative flex flex-col gap-2">
-        <Label htmlFor="subject">Subject</Label>
+        <Label className="text-xl" htmlFor="subject">
+          Subject
+        </Label>
         <Input
           disabled={isSubmitting}
           id="subject"
@@ -126,12 +140,15 @@ export default function Form() {
           placeholder="Title of your message"
           required
           autoComplete="subject"
-          className="bg-background text-ellipsis"
+          className="bg-input text-xl text-ellipsis"
         />
         {watch("subject")?.length > 0 && (
           <ClearInputButton
             isSubmitting={isSubmitting}
-            onClick={() => setValue("subject", "", { shouldValidate: true })}
+            onClick={() => {
+              setValue("subject", "");
+              clearErrors("subject");
+            }}
           />
         )}
         {errors.subject && (
@@ -139,7 +156,9 @@ export default function Form() {
         )}
       </div>
       <div className="relative flex flex-col gap-2">
-        <Label htmlFor="message">Message</Label>
+        <Label className="text-xl" htmlFor="message">
+          Message
+        </Label>
         <Textarea
           disabled={isSubmitting}
           id="message"
@@ -147,12 +166,15 @@ export default function Form() {
           {...register("message", { required: "Message is required" })}
           required
           autoComplete="message"
-          className="bg-background text-ellipsis"
+          className="bg-input text-xl text-ellipsis"
         />
         {watch("message")?.length > 0 && (
           <ClearInputButton
             isSubmitting={isSubmitting}
-            onClick={() => setValue("message", "", { shouldValidate: true })}
+            onClick={() => {
+              setValue("message", "");
+              clearErrors("message");
+            }}
           />
         )}
         {errors.message && (
@@ -169,7 +191,11 @@ export default function Form() {
         } w-1/2 self-center`}
       >
         {isSubmitting && <LoaderCircle className="animate-spin" />}
-        {isSubmitting ? "Sending Email" : "Send Email"}
+        {isSubmitting ? (
+          <span className="text-2xl">Sending Email</span>
+        ) : (
+          <span className="text-2xl">Send Email</span>
+        )}
       </Button>
       {isSubmitted && (
         <p className="m-2 text-green-500">Your message has been sent!</p>

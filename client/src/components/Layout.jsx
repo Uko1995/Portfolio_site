@@ -12,8 +12,8 @@ export default function Layout() {
       <Header />
       <Hero />
       <About />
-      <Projects />
       <Skills />
+      <Projects />
       <Contacts />
       <Footer />
     </main>

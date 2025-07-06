@@ -1,35 +1,82 @@
 import Skill from "./Skill";
 import Project from "./Project";
+import ViewMore from "./ViewMore";
 
 const ProjectData = [
   {
-    name: "Portfolio Site",
-    description: "Portfolio website that showcases my work and skills.",
-    image: "./portfolio1.webp",
-    technologies: ["React", "TailwindCss", "Vite"],
+    name: "Portfolio Website",
+    description:
+      "A personal portfolio website designed to highlight my projects, skills, and experience. Built with React and TailwindCSS, it features a responsive layout, smooth navigation, light / dark modes and interactive project showcases.",
+    image: "./portfolio.webp",
+    technologies: ["React", "TailwindCSS", "Vite", "Responsive Web Design"],
+    linkToGitHub:
+      "https://github.com/Uko1995/Portfolio_site/tree/master/client",
+    linkToLive: "https://uko-uwatt-portfolio-site-psi-seven.vercel.app/",
+    type: "frontend",
+  },
+  {
+    name: "Musical",
+    description:
+      "A media streaming platform that enables users to search, discover, and play music and videos. Integrates multiple APIs to deliver real-time content and provides a seamless, user-friendly experience for media consumption.",
+    image: "./musical.webp",
+    technologies: ["Python", "Flask", "Bootstrap", "API Integration"],
+    linkToGitHub: "https://github.com/Uko1995/Musical",
+    linkToLive: "https://musical-1-ll7p.onrender.com/",
+    type: "fullstack",
   },
   {
     name: "ParentPal",
     description:
-      "An educational recommendation app that connects parents with nearby tutors. It uses a location-based filtering algorithm to help users find the closest available educators based on their search queries.",
-    image: "./parentpal.png",
-    technologies: ["React", "NodeJs", "ExpressJs", "MongoDB"],
+      "A web application that connects parents with local tutors using a location-based and ratings recommendation algorithm. Developed as a collaborative project, ParentPal streamlines the process of finding and contacting nearby educators, making it easier for parents to access quality tutoring services.",
+    image: "",
+    technologies: [
+      "NodeJs",
+      "ExpressJs",
+      "MongoDB",
+      "Redis",
+      "API Integration",
+    ],
+    linkToGitHub: "https://github.com/princedan-123/parentPal",
+    linkToLive: "",
+    type: "backend",
+  },
+  {
+    name: "FashionSmith Clothing",
+    description:
+      "A custom menswear e-commerce platform for a bespoke tailoring brand. Users can browse collections, place orders, upload measurements, make payments, and manage their accounts through an intuitive and secure interface.",
+    image: "",
+    technologies: ["NodeJs", "ExpressJs", "MongoDB", "API Integration"],
+    linkToGitHub: "https://github.com/Uko1995/FashionSmith",
+    linkToLive: "",
+    type: "backend",
+  },
+  {
+    name: "Simple Shell",
+    description:
+      "This is an adaptation of the UNIX command line interpreter. This was done as a group project to understand how the shell works and how to implement it in C. It supports basic commands like ls, pwd, echo, and more.",
+    image: "",
+    technologies: ["C", "Unix"],
+    linkToGitHub: "https://github.com/princedan-123/simple_shell",
+    linkToLive: "",
+    type: "backend",
   },
 ];
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="container mt-10 scroll-mt-24 bg-[url(./pixels.jpg)] bg-cover bg-fixed bg-center bg-no-repeat text-accent"
-    >
-      <div className="inset-0">
-        <h1 className="section-title">Projects</h1>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <section id="projects" className="my-15 scroll-mt-24 py-10 text-primary">
+      <h1 className="mx-auto mb-8 w-fit px-5 py-2 text-4xl font-bold md:text-3xl">
+        Projects
+      </h1>
+      <div className="p-5">
+        <div className="mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {ProjectData.map((project) => (
             <Project key={project.name} project={project} />
           ))}
         </div>
+      </div>
+      <div>
+        <ViewMore />
       </div>
     </section>
   );

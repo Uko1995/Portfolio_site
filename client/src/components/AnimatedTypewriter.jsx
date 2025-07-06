@@ -7,12 +7,6 @@ const titles = [
   "FULLSTACK DEVELOPER",
 ];
 
-const lightColors = ["text-gray-800"];
-const darkColors = ["text-gray-350"];
-const colors = document.documentElement.classList.contains("dark")
-  ? darkColors
-  : lightColors;
-
 export default function AnimatedTypewriter() {
   const [index, setIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -39,7 +33,7 @@ export default function AnimatedTypewriter() {
 
   return (
     <motion.div
-      className={`${colors[index]} my-2 text-center text-2xl font-semibold italic md:text-left`}
+      className={`my-2 text-left text-4xl font-semibold text-accent-foreground/85 italic md:text-2xl`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
