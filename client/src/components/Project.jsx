@@ -21,29 +21,31 @@ export default function Project({ project }) {
     linkToLive,
   } = project;
   return (
-    <div className="relative h-fit overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
+    <div className="relative flex flex-col overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
       <div className="absolute top-4 right-5 z-10 rounded-full bg-gradient-to-br from-fuchsia-500 to-chart-1 px-7 py-1.5 tracking-widest capitalize">
         {type}
       </div>
       {/* Image */}
-      {image.length > 0 ? (
-        <img
-          className="h-1/2 w-full object-cover hover:scale-105 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out"
-          src={image}
-          alt={name}
-          loading="lazy"
-        />
-      ) : (
-        <div className="flex h-1/2 w-full items-center justify-center bg-muted-foreground/30 text-4xl">
-          {name}
-        </div>
-      )}
+      <div className="h-1/2 w-full overflow-hidden">
+        {image.length > 0 ? (
+          <img
+            className="w-full object-cover"
+            src={image}
+            alt={name}
+            loading="lazy"
+          />
+        ) : (
+          <div className="flex h-60 w-full items-center justify-center bg-muted-foreground/30 text-4xl">
+            {name}
+          </div>
+        )}
+      </div>
 
       {/* Content */}
-      <div className="h-fit border-t-2 border-accent-foreground/20 p-4 backdrop-blur-lg">
+      <div className="p-4 backdrop-blur-lg">
         <h2 className="mb-2 text-2xl font-bold md:text-xl">{name}</h2>
         <hr className="mb-2 border-accent-foreground/20" />
-        <p className="mb-2 text-lg md:text-base">{description}</p>
+        <p className="mb-2 text-base">{description}</p>
         <hr className="mb-2 border-accent-foreground/20" />
 
         <div className="flex flex-wrap items-center justify-start gap-2">
@@ -56,19 +58,19 @@ export default function Project({ project }) {
             onClick={() => window.open(linkToGitHub, "_blank")}
             type="primary"
             size="nml"
-            style="py-2 text-xl"
+            style="py-2 text-lg"
           >
             <FaSquareGithub className="size-6" />
-            Repository
+            Repo
           </Button>
           {linkToLive && linkToLive.length > 0 && (
             <Button
               type="outline"
-              style="text-accent-foreground border-2 py-2 text-xl"
+              style="text-accent-foreground border-2 py-2 text-lg"
               size="nml"
             >
               <FaArrowUpRightFromSquare className="size-5" />
-              Live Demo
+              Live
             </Button>
           )}
         </div>

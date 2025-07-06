@@ -5,17 +5,17 @@ import { FaSquareGithub } from "react-icons/fa6";
 const GITHUB_URL = "https://github.com/Uko1995?tab=repositories";
 
 const ViewMore = () => (
-  <div className="mx-auto my-10 flex max-w-2/3 flex-col items-center justify-center rounded-lg bg-primary p-6 text-primary-foreground shadow-lg">
+  <div className="mx-2 my-10 flex w-full flex-col items-center justify-center rounded-lg bg-primary p-6 text-primary-foreground shadow-lg">
     <h2 className="mb-4 text-2xl font-bold">Want to see more projects?</h2>
 
-    <div className="flex w-4/5 items-center gap-4 rounded-lg px-6 py-4 sm:flex-col md:flex-row">
+    <div className="flex w-4/5 flex-col items-center gap-4 rounded-lg px-6 py-4 md:flex-row">
       <Button
         style="px-4 rounded-full border border-transparent"
         type="special"
         size="lg"
         onClick={() => window.open(GITHUB_URL, "_blank")}
       >
-        <FaSquareGithub className="size-6" /> <span>View more projects</span>
+        <FaSquareGithub size={20} /> <span>View more</span>
       </Button>
       <Button
         onClick={() => {

@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section
-      className="mx-2 flex w-full scroll-mt-24 flex-col items-center justify-center gap-2 bg-amber-300 py-5"
+      className="mx-2 flex w-full scroll-mt-24 flex-col items-center justify-center gap-2 py-5"
       id="about"
     >
       <h1 className="mx-auto mb-3 w-fit px-5 py-2 text-5xl font-bold text-primary/90 md:text-3xl">
