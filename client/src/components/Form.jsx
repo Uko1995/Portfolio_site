@@ -66,7 +66,7 @@ export default function Form() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="flex w-full flex-col gap-5 rounded-lg bg-accent p-5 text-xl font-semibold text-accent-foreground md:w-2/3"
+      className="flex w-full flex-col gap-5 rounded-lg bg-accent p-5 text-xl font-semibold text-accent-foreground"
     >
       <p className="antialaised text-center">Fill the form to send a message</p>
       <div className="relative flex w-2/3 flex-col gap-2">
@@ -80,7 +80,7 @@ export default function Form() {
           placeholder="Your name"
           required
           autoComplete="name"
-          className="scroll-mt-24 bg-input text-xl text-ellipsis"
+          className="scroll-mt-24 bg-input text-lg text-ellipsis"
         />
         {watch("name")?.length > 0 && (
           <ClearInputButton
@@ -112,7 +112,7 @@ export default function Form() {
           placeholder="sample@gmail.com"
           required
           autoComplete="email"
-          className="bg-input text-xl text-ellipsis"
+          className="bg-input text-lg text-ellipsis"
         />
         {watch("email")?.length > 0 && (
           <ClearInputButton
@@ -140,7 +140,7 @@ export default function Form() {
           placeholder="Title of your message"
           required
           autoComplete="subject"
-          className="bg-input text-xl text-ellipsis"
+          className="bg-input text-lg text-ellipsis"
         />
         {watch("subject")?.length > 0 && (
           <ClearInputButton
@@ -155,7 +155,7 @@ export default function Form() {
           <FormErrorMessage>{errors.subject.message}</FormErrorMessage>
         )}
       </div>
-      <div className="relative flex flex-col gap-2">
+      <div className="relative flex w-full flex-col gap-2">
         <Label className="text-xl" htmlFor="message">
           Message
         </Label>
@@ -166,7 +166,7 @@ export default function Form() {
           {...register("message", { required: "Message is required" })}
           required
           autoComplete="message"
-          className="bg-input text-xl text-ellipsis"
+          className="bg-input text-lg text-ellipsis"
         />
         {watch("message")?.length > 0 && (
           <ClearInputButton
@@ -184,7 +184,7 @@ export default function Form() {
       <Button
         asChild
         type="submit"
-        size="lg"
+        size="nml"
         disabled={isSubmitting}
         className={`${
           isSubmitting ? "cursor-progress" : "cursor-pointer"
@@ -192,9 +192,9 @@ export default function Form() {
       >
         {isSubmitting && <LoaderCircle className="animate-spin" />}
         {isSubmitting ? (
-          <span className="text-2xl">Sending Email</span>
+          <span className="text-xl">Sending Email</span>
         ) : (
-          <span className="text-2xl">Send Email</span>
+          <span className="text-xl">Send Email</span>
         )}
       </Button>
       {isSubmitted && (

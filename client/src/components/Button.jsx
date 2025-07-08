@@ -24,6 +24,7 @@ export default function Button({
       "bg-primary border-1 border-transparent hover:bg-foreground text-background hover:text-background/80 dark:bg-primary dark:hover:bg-foreground dark:text-background",
     special:
       "bg-gradient-to-r from-purple-700 to-purple-400 text-white hover:from-purple-600 hover:to-purple-300 transition-colors duration-300 rounded-full shadow-lg hover:shadow-xl",
+    other: "",
   };
 
   const sizes = {

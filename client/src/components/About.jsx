@@ -8,7 +8,7 @@ export default function About() {
         About Me
       </h1>
 
-      <div className="flex w-full flex-col items-center justify-center rounded-lg bg-secondary p-5 pt-5 md:max-w-3xl">
+      <div className="flex w-full flex-col items-center justify-center rounded-lg bg-secondary p-5 pt-5 text-primary/75 md:max-w-6xl md:p-10">
         <p className="mb-4 w-full text-center text-lg text-balance">
           I'm a passionate software engineer and fullstack developer with a
           strong foundation in modern technologies. My journey into coding began

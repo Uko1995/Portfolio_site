@@ -1,14 +1,7 @@
-import { Mail, X } from "lucide-react";
+import { Mail } from "lucide-react";
 
-import ContactLink from "./ContactLink";
-import AboutInfo from "./AboutInfo";
 import Button from "./Button";
-import Footer from "./Footer";
-import {
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
+import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Form from "./Form";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -16,7 +9,7 @@ export default function Contacts() {
   return (
     <section
       id="contact"
-      className="mt-15 mb-0 flex scroll-mt-24 flex-col items-center justify-center gap-30 px-5 py-10 text-primary/75 sm:px-10 md:px-20 lg:px-32 xl:px-40"
+      className="mt-15 mb-0 flex scroll-mt-24 flex-col items-center justify-center gap-30 bg-muted px-5 py-10 text-primary/75 sm:px-10 md:px-20 lg:px-32 xl:px-40"
     >
       <div className="flex w-full flex-col items-center justify-center">
         <h2 className="mx-auto my-5 w-fit px-5 py-2 text-3xl font-bold text-primary">
@@ -36,7 +29,7 @@ export default function Contacts() {
             <div className="flex w-full flex-col items-center justify-center gap-10 text-lg">
               <Button
                 type="light"
-                style="w-2/3 gap-3 text-xl"
+                style="w-2/3 gap-3 text-lg"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "#name";
@@ -53,7 +46,7 @@ export default function Contacts() {
 
               <Button
                 type="light"
-                style="w-2/3 gap-3 text-xl"
+                style="w-2/3 gap-3 text-lg"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "https://www.linkedin.com/in/uwattuko";
@@ -68,7 +61,7 @@ export default function Contacts() {
               </Button>
               <Button
                 type="light"
-                style="w-2/3 gap-3 text-xl"
+                style="w-2/3 gap-3 text-lg"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "https://github.com/Uko1995";
@@ -82,7 +75,7 @@ export default function Contacts() {
               </Button>
               <Button
                 type="light"
-                style="w-2/3 gap-3 text-xl"
+                style="w-2/3 gap-3 text-lg"
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "https://x.com/youkay_SWE";

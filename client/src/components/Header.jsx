@@ -37,9 +37,10 @@ export default function Header() {
       className={`sticky top-3 z-50 container mx-auto flex w-[90%] scroll-mt-20 items-center justify-between rounded-sm border-1 p-2.5 shadow-lg sm:bg-background ${isMenuOpen ? "bg-gray-100" : ""} backdrop-blur-lg md:w-[85%] lg:w-[95%]`}
     >
       <a
-        href="#home"
+        href="#"
+        onClick={() => window.location.reload()}
         aria-label="home"
-        className="bg-gradient-to-r from-foreground to-sidebar-ring bg-clip-text font-cinzel text-2xl font-black text-transparent md:text-xl"
+        className="bg-gradient-to-r from-foreground to-sidebar-ring bg-clip-text font-cinzel text-xl font-black text-transparent"
       >
         <span>UKO</span>
         <span>UWATT</span>

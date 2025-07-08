@@ -1,4 +1,5 @@
 import { SkillsText } from "../utils/skills";
+import { motion } from "framer-motion";
 
 import Skill from "../components/Skill";
 import {
@@ -16,7 +17,13 @@ export default function Skills() {
       <h1 className="w-full px-5 py-2 pb-7 text-center text-4xl font-bold text-primary/90 md:text-3xl">
         Skills & Expertise
       </h1>
-      <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3"
+      >
         <SkillsCard
           title="FrontEnd Development"
           description={SkillsText.frontend}
@@ -35,7 +42,7 @@ export default function Skills() {
           description={SkillsText.database}
         />
         <SkillsCard title="Tools" description={SkillsText.tools} />
-      </div>
+      </motion.div>
     </section>
   );
 }
