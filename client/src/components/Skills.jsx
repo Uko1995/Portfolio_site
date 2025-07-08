@@ -22,7 +22,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto grid w-8/10 grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3"
       >
         <SkillsCard
           title="FrontEnd Development"

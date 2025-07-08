@@ -60,7 +60,7 @@ const ProjectData = [
     technologies: ["C", "Unix"],
     linkToGitHub: "https://github.com/princedan-123/simple_shell",
     linkToLive: "",
-    type: "backend",
+    type: "software",
   },
 ];
 

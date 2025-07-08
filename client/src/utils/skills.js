@@ -23,6 +23,7 @@ import {
   SiExpress,
   SiJavascript,
   SiSupabase,
+  SiRender,
 } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandVite } from "react-icons/tb";
@@ -64,6 +65,7 @@ export const techStack = [
     section: "frontend",
     color: "#7952B3",
   },
+  { img: SiRender, name: "Render", section: "tools", color: "#F05A28" },
 ];
 
 export const SkillsText = {
