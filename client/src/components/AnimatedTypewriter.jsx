@@ -33,7 +33,7 @@ export default function AnimatedTypewriter() {
 
   return (
     <motion.div
-      className={`my-2 text-center text-xl font-semibold text-accent-foreground/85 italic md:text-left md:text-2xl`}
+      className={`my-2 text-center text-xl font-semibold text-accent-foreground/85 italic md:text-2xl lg:text-left`}
       initial={{ opacity: 0, x: 150 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 1, ease: "easeInOut" }}

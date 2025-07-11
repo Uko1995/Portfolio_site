@@ -20,7 +20,7 @@ export default function Contacts() {
           new opportunities, collaborations, or even a friendly chat. Feel free
           to reach out through any of the platforms below.
         </p>
-        <div className="flex w-full flex-col items-center justify-center gap-15 md:flex-row">
+        <div className="flex w-full flex-col items-center justify-center gap-15 lg:flex-row">
           <div className="flex w-full flex-col items-center justify-center rounded-lg bg-primary p-5 py-21.5 text-primary-foreground dark:bg-primary-foreground dark:text-primary">
             <p className="antialaised mb-5 text-lg font-semibold">
               You can connect with me on:

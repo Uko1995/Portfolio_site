@@ -48,7 +48,7 @@ export default function Header() {
 
       <div className="flex items-center justify-end space-x-1">
         {/* Desktop navigation */}
-        <nav className="hidden items-center space-x-8 text-sm md:flex">
+        <nav className="hidden items-center space-x-8 text-sm lg:flex">
           {links.map((link) => (
             <a
               aria-label={link.name}
@@ -77,14 +77,14 @@ export default function Header() {
         {/* mobile open button */}
 
         <button
-          className="cursor-pointer bg-inherit transition-transform duration-200 ease-in-out md:hidden"
+          className="cursor-pointer bg-inherit transition-transform duration-200 ease-in-out lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X /> : <Menu />}
         </button>
         {/* mobile navigation */}
         {isMenuOpen && (
-          <nav className="absolute top-full right-0 left-0 animate-collapsible-down bg-background shadow-md transition-all duration-300 md:hidden">
+          <nav className="absolute top-full right-0 left-0 animate-collapsible-down bg-background shadow-md transition-all duration-300 lg:hidden">
             <div className="container mx-auto flex flex-col items-center space-y-1 px-4 py-4">
               {links.map((item) => (
                 <>

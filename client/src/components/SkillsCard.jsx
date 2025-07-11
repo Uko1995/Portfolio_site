@@ -15,7 +15,7 @@ export default function SkillsCard({
   titleNumber = 0,
 }) {
   return (
-    <Card className="mx-auto w-full max-w-lg bg-accent text-primary shadow-lg hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out">
+    <Card className="mx-auto w-full bg-accent text-primary shadow-lg hover:scale-105 hover:transition-all hover:duration-300 hover:ease-in-out">
       <CardHeader>
         <CardTitle
           className={`text-center text-2xl font-bold text-primary/90 md:text-lg`}
@@ -25,7 +25,7 @@ export default function SkillsCard({
       </CardHeader>
       <hr />
       <CardContent>
-        <p className="text-center text-lg text-balance text-primary/75 md:text-base">
+        <p className="text-center text-lg text-balance text-primary/75 lg:text-base">
           {description}
         </p>
       </CardContent>

@@ -7,10 +7,10 @@ import AnimatedTypewriter from "./AnimatedTypewriter";
 export default function Introduction() {
   return (
     <section
-      className="-mt-16 flex min-h-dvh w-full flex-col items-center justify-center gap-0 px-1 py-20 md:min-h-screen md:flex-row"
+      className="-mt-16 flex min-h-dvh w-full flex-col items-center justify-center gap-0 px-1 py-20 md:mx-5 md:min-h-screen lg:flex-row"
       id="home"
     >
-      <div className="mt-10 mb-10 flex max-w-3xl flex-col justify-center text-center sm:text-2xl md:mt-20 md:text-left">
+      <div className="mt-10 mb-10 flex max-w-3xl flex-col justify-center text-center sm:text-2xl md:mt-20 md:text-center lg:text-left">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -19,9 +19,9 @@ export default function Introduction() {
           viewport={{ once: true }}
           className="my-5 font-inter text-7xl font-black tracking-wide text-foreground/90 md:text-5xl md:text-[3.75rem] lg:text-[4.5rem]"
         >
-          <span className="sm:text-left">UKO </span>
+          <span className="">UKO </span>
 
-          <span className="sm:text-left">UWATT</span>
+          <span className="">UWATT</span>
         </motion.h1>
         <AnimatedTypewriter />
         <motion.p
@@ -30,7 +30,7 @@ export default function Introduction() {
           transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
           exit={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto mb-8 w-full max-w-xl text-center text-balance text-primary/60 md:mx-0 md:text-left md:text-lg"
+          className="md:mx- mx-auto mb-8 w-full max-w-xl text-center text-balance text-primary/60 md:text-lg lg:text-left"
         >
           I build exceptional and accessible digital experiences for the web. I
           am passionate about creating intuitive and high-performance
@@ -41,7 +41,7 @@ export default function Introduction() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="mx-auto grid w-3/5 grid-cols-1 justify-center gap-4 md:mx-0 md:gap-2"
+          className="mx-auto flex w-3/5 flex-col justify-center gap-4 md:mx-auto md:gap-2 lg:mx-0"
         >
           <div className="flex w-full items-center justify-center gap-3">
             <Button
@@ -54,7 +54,8 @@ export default function Introduction() {
                 }
               }}
             >
-              <Archive size={18} strokeWidth={3} /> Projects
+              <Archive size={18} strokeWidth={3} />{" "}
+              <p className="md:text-lg lg:text-lg">Projects</p>
             </Button>
             <Button
               type="info"
@@ -65,7 +66,8 @@ export default function Introduction() {
                 link.click();
               }}
             >
-              <Download size={18} strokeWidth={3} /> Resume
+              <Download size={18} strokeWidth={3} />{" "}
+              <p className="md:text-lg lg:text-lg">Resume</p>
             </Button>
           </div>
           <Button
@@ -78,7 +80,7 @@ export default function Introduction() {
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            Lets Connect
+            <p className="md:text-2xl lg:text-xl">Let's Connect</p>
           </Button>
         </motion.div>
       </div>

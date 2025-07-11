@@ -13,7 +13,10 @@ import SkillsCard from "./SkillsCard";
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-3 my-30 min-h-screen scroll-mt-24">
+    <section
+      id="skills"
+      className="mx-3 my-30 min-h-screen scroll-mt-24 lg:mx-10"
+    >
       <h1 className="w-full px-5 py-2 pb-7 text-center text-4xl font-bold text-primary/90 md:text-3xl">
         Skills & Expertise
       </h1>
@@ -22,7 +25,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="mx-auto grid w-8/10 grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto grid w-19/20 grid-cols-1 gap-7 md:grid-cols-2 lg:w-full lg:grid-cols-3"
       >
         <SkillsCard
           title="FrontEnd Development"

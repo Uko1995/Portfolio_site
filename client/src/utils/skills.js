@@ -54,7 +54,7 @@ export const techStack = [
   { img: TbBrandVite, name: "Vite", section: "frontend", color: "#646CFF" },
   {
     img: RiTailwindCssFill,
-    name: "TailwindCSS",
+    name: "Tailwind",
     section: "frontend",
     color: "#38B2AC",
   },

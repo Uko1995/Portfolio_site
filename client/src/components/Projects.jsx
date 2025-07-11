@@ -43,7 +43,7 @@ const ProjectData = [
     type: "backend",
   },
   {
-    name: "FashionSmith Clothing",
+    name: "FashionSmith",
     description:
       "A custom menswear e-commerce platform for a bespoke tailoring brand. Users can browse collections, place orders, upload measurements, make payments, and manage their accounts through an intuitive and secure interface.",
     image: "",
@@ -68,7 +68,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="mx-5 my-30 min-h-dvh scroll-mt-24 py-5 text-primary md:mx-20"
+      className="mx-5 my-30 min-h-dvh scroll-mt-24 py-5 text-primary md:mx-5 lg:mx-15"
     >
       <h1 className="mx-auto mb-8 w-fit px-5 py-2 text-4xl font-bold md:text-3xl">
         Projects
