@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Label } from "./ui/label";
@@ -31,7 +32,8 @@ export default function Form() {
   });
 
   useEffect(() => {
-    emailjs.init(import.meta.env.VITE_EMAILJS_PRIVATE_KEY);
+    console.log("EmailJS Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
   const onSubmit = async (data) => {
@@ -52,14 +54,21 @@ export default function Form() {
 
       if (response.status === 200) {
         setIsSubmitted(true);
+        console.log(response.text);
+        toast.success("Email sent successfully!");
         reset();
       } else {
+        toast.error("Failed to send email");
         throw new Error("Failed to send email");
       }
     } catch (error) {
-      alert(`Email failed: ${error.text || error.message || "Unknown error"}`);
+      console.error("EmailJS error:", error);
+      toast.error(
+        `Email failed: ${error.text || error.message || "Unknown error"}`,
+      );
     }
   };
+
   return (
     <form
       id="contact-form"

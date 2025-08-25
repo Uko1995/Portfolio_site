@@ -4,7 +4,7 @@ import React from "react";
 export default function ClearInput({ onClick = () => {}, isSubmitting }) {
   return (
     <button
-      className="absolute top-7 right-2 cursor-pointer border-1"
+      className="absolute top-11 right-2 cursor-pointer rounded-full border-1 text-foreground dark:text-foreground"
       type="reset"
       onClick={onClick}
       disabled={isSubmitting}
