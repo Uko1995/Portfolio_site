@@ -1,98 +1,201 @@
 import { Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 import Button from "./Button";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Form from "./Form";
 import { FaXTwitter } from "react-icons/fa6";
+import { useScrollTo } from "@/hooks/useUtilities";
+import { PERSONAL_INFO } from "@/config/constants";
 
 export default function Contacts() {
+  const scrollToElement = useScrollTo();
+
+  const handleEmailClick = () => {
+    scrollToElement("name");
+  };
+
+  const handleSocialClick = (url) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.click();
+  };
+
   return (
     <section
       id="contact"
-      className="mt-15 mb-0 flex scroll-mt-24 flex-col items-center justify-center gap-30 bg-muted px-5 py-10 text-primary/75 sm:px-10 md:px-20 lg:px-32 xl:px-40"
+      className="relative flex min-h-screen scroll-mt-24 flex-col items-center justify-center bg-gradient-to-br from-background via-muted/50 to-background px-4 py-24"
     >
-      <div className="flex w-full flex-col items-center justify-center">
-        <h2 className="mx-auto my-5 w-fit px-5 py-2 text-3xl font-bold text-primary">
-          Let's Connect
-        </h2>
-        <p className="mx-auto mb-5 w-full text-justify text-lg sm:w-full">
-          Interested in working together or have a project in mind? I'm open to
-          new opportunities, collaborations, or even a friendly chat. Feel free
-          to reach out through any of the platforms below.
-        </p>
-        <div className="flex w-full flex-col items-center justify-center gap-15 lg:flex-row">
-          <div className="flex w-full flex-col items-center justify-center rounded-lg bg-primary p-5 py-21.5 text-primary-foreground dark:bg-primary-foreground dark:text-primary">
-            <p className="antialaised mb-5 text-lg font-semibold">
-              You can connect with me on:
-            </p>
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 size-80 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 size-80 rounded-full bg-accent/10 blur-3xl"></div>
+      </div>
 
-            <div className="flex w-full flex-col items-center justify-center gap-10 text-lg">
-              <Button
-                type="light"
-                style="w-2/3 gap-3 text-lg"
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "#name";
-                  link.ariaLabel = "Contact Form";
-                  link.rel = "noopener noreferrer";
-                  link.click();
-                }}
-              >
-                <Mail className="size-6" strokeWidth={2.5} />
-                <div className="flex flex-col items-start">
-                  <p>Email</p>
-                </div>
-              </Button>
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        {/* Header Section */}
+        <div className="mb-16 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
+          >
+            Let's Work Together
+          </motion.span>
 
-              <Button
-                type="light"
-                style="w-2/3 gap-3 text-lg"
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "https://www.linkedin.com/in/uwattuko";
-                  link.target = "_blank";
-                  link.ariaLabel = "LinkedIn";
-                  link.rel = "noopener noreferrer";
-                  link.click();
-                }}
-              >
-                <LinkedInLogoIcon className="size-6" />{" "}
-                <p className="mt-0">LinkedIn</p>
-              </Button>
-              <Button
-                type="light"
-                style="w-2/3 gap-3 text-lg"
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "https://github.com/Uko1995";
-                  link.target = "_blank";
-                  link.ariaLabel = "GitHub";
-                  link.rel = "noopener noreferrer";
-                  link.click();
-                }}
-              >
-                <GitHubLogoIcon className="size-6" /> GitHub
-              </Button>
-              <Button
-                type="light"
-                style="w-2/3 gap-3 text-lg"
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "https://x.com/youkay_SWE";
-                  link.target = "_blank";
-                  link.ariaLabel = "X";
-                  link.rel = "noopener noreferrer";
-                  link.click();
-                }}
-              >
-                <FaXTwitter className="size-6" /> X (Twitter)
-              </Button>
-            </div>
-          </div>
-          <div className="flex w-full flex-col items-center justify-center rounded-lg border-2 border-accent-foreground/50 bg-secondary text-secondary-foreground shadow-2xl">
-            <Form />
-          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl"
+          >
+            <span className="gradient-text">Get In Touch</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg"
+          >
+            Ready to bring your ideas to life? I'm excited to hear about your
+            project and explore how we can work together to create something
+            amazing.
+          </motion.p>
         </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Contact Methods */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="rounded-3xl border border-border/50 bg-card/50 p-8 shadow-2xl backdrop-blur-sm">
+              <h3 className="mb-6 text-xl font-bold text-foreground">
+                Connect With Me
+              </h3>
+
+              <div className="space-y-4">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={handleEmailClick}
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 p-4 transition-all duration-300 hover:border-primary/40 hover:shadow-lg"
+                >
+                  <div className="flex-shrink-0 rounded-xl bg-primary/20 p-3 transition-colors group-hover:bg-primary/30">
+                    <Mail className="size-6 text-primary" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Email</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Let's discuss your project
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleSocialClick(PERSONAL_INFO.linkedin)}
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-blue-500/20 bg-gradient-to-r from-blue-500/10 to-blue-500/5 p-4 transition-all duration-300 hover:border-blue-500/40 hover:shadow-lg"
+                >
+                  <div className="flex-shrink-0 rounded-xl bg-blue-500/20 p-3 transition-colors group-hover:bg-blue-500/30">
+                    <LinkedInLogoIcon className="size-6 text-blue-500" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">LinkedIn</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Professional networking
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleSocialClick(PERSONAL_INFO.github)}
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-secondary/20 bg-gradient-to-r from-secondary/10 to-secondary/5 p-4 transition-all duration-300 hover:border-secondary/40 hover:shadow-lg"
+                >
+                  <div className="flex-shrink-0 rounded-xl bg-secondary/20 p-3 transition-colors group-hover:bg-secondary/30">
+                    <GitHubLogoIcon className="size-6 text-secondary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">GitHub</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Check out my code
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleSocialClick(PERSONAL_INFO.twitter)}
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-accent/20 bg-gradient-to-r from-accent/10 to-accent/5 p-4 transition-all duration-300 hover:border-accent/40 hover:shadow-lg"
+                >
+                  <div className="flex-shrink-0 rounded-xl bg-accent/20 p-3 transition-colors group-hover:bg-accent/30">
+                    <FaXTwitter className="size-6 text-accent-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      X (Twitter)
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Follow my journey
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-3xl border border-border/50 bg-card/50 shadow-2xl backdrop-blur-sm"
+          >
+            <div className="border-b border-border/50 bg-gradient-to-r from-primary/10 to-accent/10 p-6">
+              <h3 className="text-xl font-bold text-foreground">
+                Send a Message
+              </h3>
+              <p className="mt-2 text-muted-foreground">
+                I'll get back to you within 24 hours
+              </p>
+            </div>
+            <div className="p-6">
+              <Form />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-6 py-3">
+            <div className="size-2 animate-pulse rounded-full bg-green-500"></div>
+            <span className="text-sm font-medium text-foreground">
+              Available for new projects
+            </span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

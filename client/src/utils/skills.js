@@ -24,6 +24,7 @@ import {
   SiJavascript,
   SiSupabase,
   SiRender,
+  SiTypescript,
 } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandVite } from "react-icons/tb";
@@ -36,6 +37,12 @@ export const techStack = [
     name: "JavaScript",
     section: "languages",
     color: "#F7DF1E",
+  },
+  {
+    img: SiTypescript,
+    name: "TypeScript",
+    section: "languages",
+    color: "#3178C6",
   },
   { img: FaReact, name: "React", section: "frontend", color: "#61DAFB" },
   { img: IoLogoNodejs, name: "NodeJs", section: "backend", color: "#8CC84B" },

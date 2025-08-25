@@ -49,16 +49,14 @@ export default function Form() {
           message,
         },
       );
-      if (response.status === 200) {
-        console.log("Email sent successfully");
-      } else {
-        console.error("Failed to send email");
-      }
 
-      setIsSubmitted(true);
-      reset();
+      if (response.status === 200) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        throw new Error("Failed to send email");
+      }
     } catch (error) {
-      console.error("Error submitting form", error);
       alert(`Email failed: ${error.text || error.message || "Unknown error"}`);
     }
   };

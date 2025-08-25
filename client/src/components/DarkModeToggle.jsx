@@ -18,13 +18,19 @@ export default function DarkModeToggle() {
   );
   return (
     <div
-      className="mx-3 flex cursor-pointer items-center justify-center rounded-md"
+      className="relative flex cursor-pointer items-center justify-center rounded-2xl bg-muted/50 p-3 transition-all duration-300 hover:scale-105 hover:bg-muted"
       onClick={() => setIsDarkMode((prev) => !prev)}
     >
       {!isDarkMode ? (
-        <FaMoon size={25} className="fill-gray-800" />
+        <FaMoon
+          size={20}
+          className="text-muted-foreground transition-colors duration-300 hover:text-foreground"
+        />
       ) : (
-        <FaSun size={25} className="fill-gray-800 dark:fill-gray-100" />
+        <FaSun
+          size={20}
+          className="text-amber-500 transition-colors duration-300 hover:text-amber-400"
+        />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 export default function SkillName({ skill = "" }) {
   return (
-    <div className="mb-3 rounded-xl bg-muted/600 px-4 py-2.5 text-sm text-background text-primary/75 shadow-lg md:text-base">
+    <div className="rounded-xl bg-muted px-3 py-2 text-xs text-muted-foreground shadow-sm sm:text-sm">
       {skill}
     </div>
   );

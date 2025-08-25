@@ -1,12 +1,5 @@
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import {
-  FaArrowUpRightDots,
-  FaArrowUpRightFromSquare,
-  FaSquareArrowUpRight,
-  FaSquareGithub,
-} from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaSquareGithub } from "react-icons/fa6";
 
-import Skill from "./Skill";
 import Button from "./Button";
 import SkillName from "./SkillName";
 export default function Project({ project }) {
@@ -20,83 +13,65 @@ export default function Project({ project }) {
     linkToLive,
   } = project;
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-3xl border-2 bg-accent text-accent-foreground shadow-lg hover:scale-103 hover:transition-all hover:delay-300 hover:duration-500 hover:ease-in-out dark:bg-secondary dark:text-foreground">
-      <div className="absolute top-4 right-5 z-10 rounded-full bg-blue-600 px-7 py-1.5 tracking-widest capitalize hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600">
-        <p className="text-sm text-white">{type}</p>
+    <div className="relative flex flex-col overflow-hidden rounded-3xl border border-border/30 bg-card text-card-foreground shadow-lg transition-all duration-300 hover:scale-103 hover:shadow-2xl">
+      <div className="absolute top-4 right-5 z-10 rounded-full bg-primary px-7 py-1.5 tracking-widest text-primary-foreground capitalize shadow-md">
+        <p className="text-sm font-medium">{type}</p>
       </div>
       {/* Image */}
-      <div className="h-1/2 w-full overflow-hidden">
+      <div className="w-full flex-1 overflow-hidden">
         {image.length > 0 ? (
           <img
-            className="w-full object-cover"
+            className="h-full w-full object-cover"
             src={image}
             alt={name}
             loading="lazy"
           />
         ) : (
-          <div className="flex h-60 w-full items-center justify-center bg-muted-foreground/30 text-4xl">
+          <div className="flex h-full w-full items-center justify-center bg-muted text-lg font-semibold text-muted-foreground lg:text-xl">
             {name}
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-2 backdrop-blur-lg">
-        <h2 className="mb-1.5 text-xl font-bold text-primary/75 md:text-lg">
+      <div className="space-y-2 p-4 lg:p-5">
+        <h2 className="text-base font-bold text-foreground lg:text-lg">
           {name}
         </h2>
-        <hr className="mb-2 border-accent-foreground/20" />
-        <p className="mb-2 text-base text-primary/75">{description}</p>
-        <hr className="mb-1 border-accent-foreground/20" />
+        <hr className="border-border/30" />
+        <p className="text-xs leading-relaxed text-muted-foreground lg:text-sm">
+          {description}
+        </p>
+        <hr className="border-border/30" />
 
         <div className="flex flex-wrap items-center justify-start gap-2">
           {technologies.map((skill) => (
             <SkillName key={skill} skill={skill} />
           ))}
         </div>
-        <div className="mt-2 flex flex-col items-center justify-center gap-2 md:flex-row">
+        <div className="mt-3 flex items-center justify-center gap-2 md:flex-row lg:gap-3">
           <Button
             onClick={() => window.open(linkToGitHub, "_blank")}
-            type="info"
+            type="outline"
             size="nml"
-            style=" text-base text-accent-foreground border-2"
+            style="text-sm border-2 flex-1 md:flex-none lg:max-w-[120px] xl:max-w-[140px]"
           >
-            <FaSquareGithub className="size-6" />
-            Repo
+            <FaSquareGithub className="size-4 lg:size-5" />
+            <span>Repository</span>
           </Button>
           {linkToLive && linkToLive.length > 0 && (
             <Button
-              type="other"
-              style="text-primary/75 border-2 py-2 text-base shadow-md hover:shadow-lg"
+              onClick={() => window.open(linkToLive, "_blank")}
+              type="primary"
+              style="text-sm py-2 shadow-md hover:shadow-lg flex-1 md:flex-none lg:max-w-[120px] xl:max-w-[140px]"
               size="nml"
             >
-              <FaArrowUpRightFromSquare className="size-5" />
-              Live
+              <FaArrowUpRightFromSquare className="size-4 lg:size-5" />
+              <span>Live Demo</span>
             </Button>
           )}
         </div>
       </div>
     </div>
-
-    // <div className="rounded-lg bg-muted text-primary">
-    //   <div className="relative inset-0 overflow-hidden rounded-lg">
-    //     <img className="rounded-t-lg" src={image} alt={name} loading="lazy" />
-    //   </div>
-    //   <div className="bg-transparent p-4 backdrop-blur-lg">
-    //     <h2 className="m-2 text-xl font-bold">{name}</h2>
-
-    //     <p className="m-2 text-primary">{description}</p>
-    //     <div className="flex flex-col text-primary">
-    //       <p className="p-2">Technologies used:</p>
-    //       <div className="flex flex-row gap-2">
-    //         {techStack
-    //           .filter((skill) => technologies.includes(skill.name))
-    //           .map((skill) => (
-    //             <Skill key={skill.name} skill={skill} />
-    //           ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }

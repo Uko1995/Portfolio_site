@@ -5,17 +5,21 @@ import Footer from "./Footer";
 import Contacts from "./Contacts";
 import About from "./About";
 import Projects from "./Projects";
+import SkipToContent from "./SkipToContent";
 
 export default function Layout() {
   return (
-    <main id="home">
+    <div className="min-h-screen">
+      <SkipToContent />
       <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contacts />
-      <Footer />
-    </main>
+      <main id="main-content" className="overflow-x-hidden">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contacts />
+        <Footer />
+      </main>
+    </div>
   );
 }

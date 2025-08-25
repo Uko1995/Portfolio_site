@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ANIMATION_CONFIG } from "@/config/constants";
 
-const titles = [
-  "SOFTWARE ENGINEER",
-  "BACKEND DEVELOPER",
-  "FULLSTACK DEVELOPER",
-];
+const titles = ["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER"];
 
 export default function AnimatedTypewriter() {
   const [index, setIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState(titles[0]);
 
   useEffect(() => {
     const currentText = titles[index];
@@ -19,33 +16,35 @@ export default function AnimatedTypewriter() {
     const interval = setInterval(() => {
       setDisplayedText((prev) => prev + currentText.charAt(i - 1));
       i++;
-      if (i === currentText.length) {
+      if (i >= currentText.length) {
         clearInterval(interval);
         // Wait a bit before moving to the next word
         setTimeout(() => {
           setIndex((index + 1) % titles.length);
-        }, 2000); // delay after full word typed
+        }, ANIMATION_CONFIG.typewriterDelay);
       }
-    }, 80); // typing speed
+    }, ANIMATION_CONFIG.typewriterSpeed);
 
     return () => clearInterval(interval);
   }, [index]);
 
   return (
     <motion.div
-      className={`my-2 text-center text-xl font-semibold text-accent-foreground/85 italic md:text-2xl lg:text-left`}
+      className="my-2 text-center lg:text-left"
       initial={{ opacity: 0, x: 150 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
       exit={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      {displayedText}
-      <motion.span
-        className="ml-1 inline-block w-1"
-        animate={{ opacity: [1, 0, 1] }}
-        transition={{ repeat: Infinity, duration: 1 }}
-      />
+      <div className="gradient-text text-xl font-bold tracking-wide md:text-3xl lg:ms-6 lg:text-4xl">
+        {displayedText}
+        <motion.span
+          className="ml-2 inline-block h-5 w-1 bg-accent md:h-10 lg:h-12"
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ repeat: Infinity, duration: 1 }}
+        />
+      </div>
     </motion.div>
   );
 }

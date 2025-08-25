@@ -4,38 +4,43 @@ export default function Button({
   type = "primary",
   size = "nml",
   onClick,
+  disabled = false,
 }) {
   const types = {
     primary:
-      "bg-primary border-1 border-transparent hover:bg-foreground text-background hover:text-background/80 dark:bg-primary dark:hover:bg-foreground dark:text-background",
-    secondary: "bg-secondary hover:bg-secondary- text-secondary",
+      "bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-xl transition-all duration-300 border-0",
+    secondary:
+      "bg-secondary/80 backdrop-blur-sm text-secondary-foreground hover:bg-secondary border border-border/50",
     danger:
-      "bg-red-600 hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-600 text-white",
+      "bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-red-500/25",
     success:
-      "bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white",
+      "bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-green-500/25",
     warning:
-      "bg-yellow-600 hover:bg-yellow-700 dark:bg-yellow-700 dark:hover:bg-yellow-600 text-white",
-    info: "border-1 border-transparent bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white",
+      "bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-orange-600 shadow-lg hover:shadow-yellow-500/25",
+    info: "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 shadow-lg hover:shadow-blue-500/25",
     light:
-      "bg-gray-200 border-1 border-transparent hover:bg-gray-300 dark:bg-gray-300 dark:hover:bg-gray-200 text-gray-800",
+      "bg-card/80 backdrop-blur-sm text-card-foreground hover:bg-card border border-border/50 shadow-sm hover:shadow-md",
     outline:
-      "border-1 border-foreground text-foreground hover:text-foreground/80 hover:bg-foreground/10 dark:text-foreground",
+      "border-2 border-primary/50 text-primary hover:bg-primary/10 hover:border-primary backdrop-blur-sm",
     submit:
-      "bg-primary border-1 border-transparent hover:bg-foreground text-background hover:text-background/80 dark:bg-primary dark:hover:bg-foreground dark:text-background",
+      "bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-xl",
     special:
-      "bg-gradient-to-r from-purple-700 to-purple-400 text-white hover:from-purple-600 hover:to-purple-300 transition-colors duration-300 rounded-full shadow-lg hover:shadow-xl",
-    other: "",
+      "bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-size-200 bg-pos-0 hover:bg-pos-100 text-white shadow-lg hover:shadow-xl transition-all duration-500",
+    other:
+      "bg-muted/80 backdrop-blur-sm text-muted-foreground hover:bg-muted border border-border/50",
   };
 
   const sizes = {
-    lg: "py-3 px-5 text-xl",
-    nml: "px-3 py-1.5",
+    lg: "py-4 px-8 text-lg font-semibold",
+    nml: "px-4 py-2.5 text-sm font-medium",
+    sm: "px-3 py-1.5 text-xs font-medium",
   };
 
   return (
     <button
       onClick={onClick}
-      className={`${style} flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg font-bold ${types[type]} ${sizes[size]}`}
+      disabled={disabled}
+      className={` ${style} flex w-full transform cursor-pointer items-center justify-center gap-2.5 rounded-xl font-bold transition-all duration-300 ease-out hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 ${types[type]} ${sizes[size]} `}
     >
       {children}
     </button>
