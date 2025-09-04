@@ -36,11 +36,11 @@ const ProjectData = [
     name: "FashionSmith",
     description:
       "A complete custom menswear tailoring platform for a bespoke tailoring brand. ",
-    image: "./screen.webp",
+    image: "./fashionsmith.webp",
     technologies: ["NodeJs", "ExpressJs", "MongoDB", "API Integration"],
     linkToGitHub: "https://github.com/Uko1995/FashionSmith",
-    linkToLive: "",
-    type: "backend",
+    linkToLive: "https://fashion-smith.vercel.app",
+    type: "fullstack",
   },
   {
     name: "Musical",
