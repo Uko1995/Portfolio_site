@@ -79,16 +79,6 @@ export default function Projects() {
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Header Section */}
         <div className="mb-20 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-6 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-          >
-            My Work
-          </motion.span>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -143,15 +133,15 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mx-auto mt-20 w-3/4 text-center"
         >
-          <div className="relative inline-block">
+          <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 blur-xl"></div>
-            <div className="relative rounded-2xl border border-border/50 bg-card/50 p-8 shadow-2xl backdrop-blur-sm">
-              <h3 className="mb-4 text-xl font-bold text-foreground md:text-2xl">
+            <div className="relative rounded-2xl border border-border/50 bg-card/50 px-12 py-10 shadow-2xl backdrop-blur-sm">
+              <h3 className="mb-6 text-xl font-bold text-foreground md:text-2xl">
                 Want to see more?
               </h3>
-              <p className="mx-auto mb-6 max-w-md text-muted-foreground">
+              <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
                 Explore my complete portfolio and discover more projects that
                 demonstrate my passion for creating innovative solutions.
               </p>

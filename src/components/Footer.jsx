@@ -49,13 +49,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-20 size-80 rounded-full bg-primary/5 blur-3xl"></div>
-        <div className="absolute top-0 right-20 size-64 rounded-full bg-accent/5 blur-3xl"></div>
-      </div>
-
+    <footer className="relative overflow-hidden bg-muted">
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
@@ -144,7 +138,7 @@ export default function Footer() {
 
               <div className="mb-6 space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg">
                     <Mail className="h-4 w-4 text-primary" />
                   </div>
                   <a
@@ -156,7 +150,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500/10">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg">
                     <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
                   </div>
                   <span className="text-sm text-muted-foreground">
@@ -180,34 +174,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border/30">
+        <div className="border-t border-border">
           <div className="mx-auto max-w-7xl px-4 py-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center justify-between gap-4 md:flex-row"
+              className="flex items-center justify-center gap-4"
             >
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span>
                   &copy; {currentYear} Uko Uwatt. All rights reserved.
                 </span>
-              </div>
-
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <span>Built with</span>
-                  <Heart className="h-4 w-4 animate-pulse text-red-500" />
-                  <span>using</span>
-                  <Code2 className="h-4 w-4 text-blue-500" />
-                  <span>React & TailwindCSS</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Coffee className="h-4 w-4 text-amber-600" />
-                  <span>Fueled by coffee</span>
-                </div>
               </div>
             </motion.div>
           </div>

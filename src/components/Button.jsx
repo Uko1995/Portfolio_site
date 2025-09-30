@@ -40,7 +40,7 @@ export default function Button({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={` ${style} flex w-full transform cursor-pointer items-center justify-center gap-2.5 rounded-xl font-bold transition-all duration-300 ease-out hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 ${types[type]} ${sizes[size]} `}
+      className={` ${style} flex w-full transform cursor-pointer items-center justify-center gap-2.5 rounded-md font-bold transition-all duration-300 ease-out hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 ${types[type]} ${sizes[size]} `}
     >
       {children}
     </button>

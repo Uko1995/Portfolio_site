@@ -30,17 +30,17 @@ export default function AnimatedTypewriter() {
 
   return (
     <motion.div
-      className="my-2 text-center lg:text-left"
+      className="text-center lg:text-left"
       initial={{ opacity: 0, x: 150 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
       exit={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className="gradient-text text-xl font-bold tracking-wide md:text-3xl lg:ms-6 lg:text-4xl">
+      <div className="gradient-text text-xl font-bold tracking-wide md:text-3xl lg:ms-4 lg:text-3xl">
         {displayedText}
         <motion.span
-          className="ml-2 inline-block h-5 w-1 bg-accent md:h-10 lg:h-12"
+          className="ml-2 inline-block h-4 w-1 bg-accent md:h-6 lg:h-6"
           animate={{ opacity: [1, 0, 1] }}
           transition={{ repeat: Infinity, duration: 1 }}
         />

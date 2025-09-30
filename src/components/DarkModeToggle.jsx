@@ -29,7 +29,7 @@ export default function DarkModeToggle() {
       ) : (
         <FaSun
           size={20}
-          className="text-amber-500 transition-colors duration-300 hover:text-amber-400"
+          className="text-muted-foreground transition-colors duration-300"
         />
       )}
     </div>

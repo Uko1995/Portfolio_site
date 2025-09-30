@@ -65,16 +65,6 @@ export default function About() {
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Header Section */}
         <div className="mb-20 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-6 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-          >
-            Getting to Know Me
-          </motion.span>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -107,8 +97,8 @@ export default function About() {
             className="space-y-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 blur-xl"></div>
-              <div className="relative rounded-3xl border border-border/50 bg-card/50 p-8 shadow-2xl backdrop-blur-sm">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 blur-lg"></div>
+              <div className="relative rounded-3xl border border-border/50 bg-card/50 p-8 shadow-lg backdrop-blur-sm">
                 <h3 className="mb-6 text-2xl font-bold text-foreground">
                   My Journey
                 </h3>
@@ -116,11 +106,8 @@ export default function About() {
                 <div className="space-y-4 leading-relaxed text-muted-foreground">
                   <p>
                     I am a passionate{" "}
-                    <span className="font-semibold text-primary">
-                      Software Engineer
-                    </span>{" "}
-                    and
-                    <span className="font-semibold text-primary">
+                    <span className="font-semibold">Software Engineer</span> and
+                    <span className="font-semibold">
                       {" "}
                       Fullstack Developer
                     </span>{" "}
@@ -130,7 +117,7 @@ export default function About() {
 
                   <p>
                     On the frontend, I work with{" "}
-                    <span className="font-semibold text-accent">
+                    <span className="font-semibold">
                       React, TypeScript, TailwindCSS
                     </span>
                     , and modern state management solutions to create responsive
@@ -140,11 +127,11 @@ export default function About() {
 
                   <p>
                     On the backend, I specialize in{" "}
-                    <span className="font-semibold text-accent">
+                    <span className="font-semibold">
                       Node.js, Express, and RESTful APIs
                     </span>
                     , paired with databases like{" "}
-                    <span className="font-semibold text-accent">
+                    <span className="font-semibold">
                       MongoDB, MySQL, and Redis
                     </span>{" "}
                     to design efficient and reliable systems.
@@ -202,91 +189,6 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Technology Stack */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <div className="mb-12 text-center">
-            <h3 className="mb-4 text-xl font-bold text-foreground md:text-2xl">
-              Technologies I Work With
-            </h3>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              A curated selection of the tools and technologies that power my
-              development workflow
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.05 * index }}
-                viewport={{ once: true }}
-                className="rounded-full bg-muted/50 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:scale-105 hover:bg-muted hover:text-foreground"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 gap-8 md:grid-cols-3"
-        >
-          {[
-            {
-              number: "3+",
-              label: "Years of Experience",
-              description: "Building web applications",
-            },
-            {
-              number: "5+",
-              label: "Projects Completed",
-              description: "End-to-end solutions delivered",
-            },
-            {
-              number: "100%",
-              label: "Passion Driven",
-              description: "Committed to excellence",
-            },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="relative mb-6">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-xl"></div>
-                <div className="relative inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm">
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-bold text-transparent">
-                    {stat.number}
-                  </span>
-                </div>
-              </div>
-              <h4 className="mb-2 text-base font-bold text-foreground">
-                {stat.label}
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                {stat.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-
         {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -296,8 +198,8 @@ export default function About() {
           className="mt-20 text-center"
         >
           <div className="relative inline-block">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 blur-xl"></div>
-            <div className="relative rounded-2xl border border-border/50 bg-card/50 p-8 shadow-2xl backdrop-blur-sm">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 blur-lg"></div>
+            <div className="relative rounded-2xl border border-border/50 bg-card/50 p-8 shadow-lg backdrop-blur-sm">
               <h3 className="mb-4 text-xl font-bold text-foreground md:text-2xl">
                 Let's Build Something Amazing Together
               </h3>

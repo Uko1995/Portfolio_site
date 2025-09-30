@@ -60,16 +60,6 @@ export default function Skills() {
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Header Section */}
         <div className="mb-20 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-6 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-          >
-            Technical Expertise
-          </motion.span>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -105,18 +95,13 @@ export default function Skills() {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className={`group relative rounded-3xl bg-gradient-to-br ${category.gradient} p-[1px] shadow-2xl`}
+              className={`group relative rounded-3xl bg-gradient-to-br p-[1px] shadow-2xl`}
             >
               <div
                 className={`relative h-full rounded-3xl border bg-card/50 backdrop-blur-sm ${category.borderColor} p-6 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl`}
               >
                 {/* Category Header */}
                 <div className="mb-6">
-                  <div
-                    className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${category.iconBg} mb-4`}
-                  >
-                    <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-primary to-accent"></div>
-                  </div>
                   <h3 className="mb-3 text-lg font-bold text-foreground">
                     {category.title}
                   </h3>
@@ -157,13 +142,6 @@ export default function Skills() {
                     ))}
                   </div>
                 </div>
-
-                {/* Skill Count Badge */}
-                <div className="absolute top-4 right-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
-                    {category.skills.length}
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -178,8 +156,8 @@ export default function Skills() {
           className="mt-20"
         >
           <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/10 to-accent/10 blur-xl"></div>
-            <div className="relative rounded-3xl border border-border/50 bg-card/50 p-8 shadow-2xl backdrop-blur-sm">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/10 to-accent/10 blur-lg"></div>
+            <div className="relative rounded-3xl border border-border/50 bg-card/50 p-8 shadow-lg backdrop-blur-sm">
               <div className="mb-8 text-center">
                 <h3 className="mb-4 text-xl font-bold text-foreground md:text-2xl">
                   Complete Technology Stack

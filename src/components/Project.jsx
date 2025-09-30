@@ -13,12 +13,12 @@ export default function Project({ project }) {
     linkToLive,
   } = project;
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-3xl border border-border/30 bg-card text-card-foreground shadow-lg transition-all duration-300 hover:scale-103 hover:shadow-2xl">
-      <div className="absolute top-4 right-5 z-10 rounded-full bg-primary px-7 py-1.5 tracking-widest text-primary-foreground capitalize shadow-md">
-        <p className="text-sm font-medium">{type}</p>
+    <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/30 bg-card text-card-foreground shadow-lg transition-all duration-300 hover:scale-103 hover:shadow-2xl">
+      <div className="absolute top-4 right-5 z-10 rounded-md bg-primary px-3 py-1 tracking-widest text-primary-foreground capitalize">
+        <p className="text-xs font-medium">{type}</p>
       </div>
       {/* Image */}
-      <div className="w-full flex-1 overflow-hidden">
+      <div className="h-60 w-full overflow-hidden">
         {image.length > 0 ? (
           <img
             className="h-full w-full object-cover"
@@ -54,16 +54,16 @@ export default function Project({ project }) {
             onClick={() => window.open(linkToGitHub, "_blank")}
             type="outline"
             size="nml"
-            style="text-sm border-2 flex-1 md:flex-none lg:max-w-[120px] xl:max-w-[140px]"
+            style={`text-sm border-2 w-full ${linkToLive ? "flex-1" : ""}`}
           >
             <FaSquareGithub className="size-4 lg:size-5" />
             <span>Repository</span>
           </Button>
-          {linkToLive && linkToLive.length > 0 && (
+          {linkToLive && (
             <Button
               onClick={() => window.open(linkToLive, "_blank")}
               type="primary"
-              style="text-sm py-2 shadow-md hover:shadow-lg flex-1 md:flex-none lg:max-w-[120px] xl:max-w-[140px]"
+              style="text-sm py-2 shadow-md hover:shadow-lg w-full flex-1"
               size="nml"
             >
               <FaArrowUpRightFromSquare className="size-4 lg:size-5" />

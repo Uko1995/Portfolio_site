@@ -37,16 +37,6 @@ export default function Contacts() {
       <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* Header Section */}
         <div className="mb-16 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-          >
-            Let's Work Together
-          </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,8 +82,8 @@ export default function Contacts() {
                   onClick={handleEmailClick}
                   className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 p-4 transition-all duration-300 hover:border-primary/40 hover:shadow-lg"
                 >
-                  <div className="flex-shrink-0 rounded-xl bg-primary/20 p-3 transition-colors group-hover:bg-primary/30">
-                    <Mail className="size-6 text-primary" strokeWidth={2} />
+                  <div className="flex-shrink-0 rounded-xl p-3 transition-colors">
+                    <Mail className="size-6" strokeWidth={2} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
@@ -107,10 +97,10 @@ export default function Contacts() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleSocialClick(PERSONAL_INFO.linkedin)}
-                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-blue-500/20 bg-gradient-to-r from-blue-500/10 to-blue-500/5 p-4 transition-all duration-300 hover:border-blue-500/40 hover:shadow-lg"
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 p-4 transition-all duration-300 hover:border-blue-500/40 hover:shadow-lg"
                 >
-                  <div className="flex-shrink-0 rounded-xl bg-blue-500/20 p-3 transition-colors group-hover:bg-blue-500/30">
-                    <LinkedInLogoIcon className="size-6 text-blue-500" />
+                  <div className="flex-shrink-0 rounded-xl p-3 transition-colors">
+                    <LinkedInLogoIcon className="size-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">LinkedIn</h4>
@@ -124,10 +114,10 @@ export default function Contacts() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleSocialClick(PERSONAL_INFO.github)}
-                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-secondary/20 bg-gradient-to-r from-secondary/10 to-secondary/5 p-4 transition-all duration-300 hover:border-secondary/40 hover:shadow-lg"
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 p-4 transition-all duration-300 hover:border-secondary/40 hover:shadow-lg"
                 >
-                  <div className="flex-shrink-0 rounded-xl bg-secondary/20 p-3 transition-colors group-hover:bg-secondary/30">
-                    <GitHubLogoIcon className="size-6 text-secondary-foreground" />
+                  <div className="flex-shrink-0 rounded-xl p-3 transition-colors group-hover:bg-secondary/30">
+                    <GitHubLogoIcon className="size-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">GitHub</h4>
@@ -141,10 +131,10 @@ export default function Contacts() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleSocialClick(PERSONAL_INFO.twitter)}
-                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-accent/20 bg-gradient-to-r from-accent/10 to-accent/5 p-4 transition-all duration-300 hover:border-accent/40 hover:shadow-lg"
+                  className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 p-4 transition-all duration-300 hover:border-accent/40 hover:shadow-lg"
                 >
-                  <div className="flex-shrink-0 rounded-xl bg-accent/20 p-3 transition-colors group-hover:bg-accent/30">
-                    <FaXTwitter className="size-6 text-accent-foreground" />
+                  <div className="flex-shrink-0 rounded-xl p-3 transition-colors">
+                    <FaXTwitter className="size-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">
@@ -167,7 +157,7 @@ export default function Contacts() {
             viewport={{ once: true }}
             className="overflow-hidden rounded-3xl border border-border/50 bg-card/50 shadow-2xl backdrop-blur-sm"
           >
-            <div className="border-b border-border/50 bg-gradient-to-r from-primary/10 to-accent/10 p-6">
+            <div className="border-b p-6">
               <h3 className="text-xl font-bold text-foreground">
                 Send a Message
               </h3>

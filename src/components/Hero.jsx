@@ -59,20 +59,15 @@ export default function Introduction() {
       </motion.div>
 
       {/* Content - appears second on mobile, first on desktop */}
-      <div className="relative z-10 order-2 flex w-full max-w-4xl flex-col justify-center text-center lg:order-1 lg:text-left">
+      <div className="relative z-10 order-2 flex w-full max-w-4xl flex-col justify-center text-center lg:order-1 lg:mt-10 lg:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="mt-5 font-inter text-3xl font-black tracking-tight md:text-5xl lg:ms-5 lg:text-7xl"
+          className="mt-5 font-inter text-3xl font-black tracking-tight md:text-5xl lg:ms-4 lg:text-5xl"
         >
-          <span className="gradient-text block">
-            {PERSONAL_INFO.name.split(" ")[0]}
-          </span>
-          <span className="gradient-text block">
-            {PERSONAL_INFO.name.split(" ")[1]}
-          </span>
+          <span className="gradient-text block">{PERSONAL_INFO.name}</span>
         </motion.h1>
         <AnimatedTypewriter />
         <motion.p
@@ -80,7 +75,7 @@ export default function Introduction() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="mx-auto mb-5 w-full max-w-3xl text-center text-base text-balance text-muted-foreground md:text-lg lg:text-left"
+          className="mx-auto mb-5 w-full max-w-3xl text-center text-base text-balance text-muted-foreground md:text-base lg:text-left"
         >
           I build exceptional and accessible digital experiences for the web. I
           am passionate about creating intuitive and high-performance
@@ -93,19 +88,15 @@ export default function Introduction() {
           viewport={{ once: true }}
           className="item-center mx-auto flex w-full max-w-md flex-col justify-center gap-4 lg:mx-0 lg:ms-6 lg:max-w-lg"
         >
-          <div className="flex w-full max-w-sm items-center justify-center gap-3 md:justify-start">
-            <Button type="outline" size="nml" onClick={handleScrollToProjects}>
+          <div className="flex w-full max-w-lg items-center justify-center gap-3 md:justify-start">
+            <Button type="outline" size="lg" onClick={handleScrollToProjects}>
               <Archive size={18} strokeWidth={2.5} />
               <span className="text-sm md:text-base">Projects</span>
             </Button>
-            <Button type="secondary" size="nml" onClick={handleResumeDownload}>
-              <Download size={18} strokeWidth={2.5} />
-              <span className="text-sm md:text-base">Resume</span>
+            <Button type="primary" size="lg" onClick={handleScrollToContact}>
+              <span>Let's Connect</span>
             </Button>
           </div>
-          <Button type="primary" size="lg" onClick={handleScrollToContact}>
-            <span>Let's Connect</span>
-          </Button>
         </motion.div>
       </div>
     </section>

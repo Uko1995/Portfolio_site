@@ -73,69 +73,79 @@ export default function Form() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="flex w-full flex-col gap-5 rounded-lg bg-accent p-5 text-xl font-semibold text-accent-foreground"
+      className="flex w-full flex-col gap-3 p-3 text-xl font-semibold backdrop-blur-sm"
     >
-      <p className="antialaised text-center">Fill the form to send a message</p>
-      <div className="relative flex w-2/3 flex-col gap-2">
-        <Label className="text-xl" htmlFor="name">
-          Name
-        </Label>
-        <Input
-          disabled={isSubmitting}
-          id="name"
-          {...register("name", { required: "Name is required" })}
-          placeholder="Your name"
-          required
-          autoComplete="name"
-          className="scroll-mt-24 bg-input text-lg text-ellipsis"
-        />
-        {watch("name")?.length > 0 && (
-          <ClearInputButton
-            isSubmitting={isSubmitting}
-            onClick={() => {
-              setValue("name", "");
-              clearErrors("name");
-            }}
+      <div className="flex gap-3">
+        <div className="relative flex flex-1 flex-col gap-1">
+          <Label
+            className="text-lg font-medium text-gray-800 dark:text-gray-200"
+            htmlFor="name"
+          >
+            Name
+          </Label>
+          <Input
+            disabled={isSubmitting}
+            id="name"
+            {...register("name", { required: "Name is required" })}
+            placeholder="Your name"
+            required
+            autoComplete="name"
+            className="scroll-mt-24 rounded-lg border-2 border-gray-300 bg-background/80 px-4 py-2 text-lg text-gray-800 transition-all duration-200 placeholder:text-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
           />
-        )}
-        {errors.name && (
-          <FormErrorMessage>{errors.name.message}</FormErrorMessage>
-        )}
-      </div>
-      <div className="relative flex flex-col gap-2">
-        <Label className="text-xl" htmlFor="email">
-          Email
-        </Label>
-        <Input
-          disabled={isSubmitting}
-          id="email"
-          {...register("email", {
-            required: "Email is required",
-            pattern: {
-              value: /\S+@\S+\.\S+/,
-              message: "Does not match email format",
-            },
-          })}
-          placeholder="sample@gmail.com"
-          required
-          autoComplete="email"
-          className="bg-input text-lg text-ellipsis"
-        />
-        {watch("email")?.length > 0 && (
-          <ClearInputButton
-            isSubmitting={isSubmitting}
-            onClick={() => {
-              setValue("email", "");
-              clearErrors("email");
-            }}
+          {watch("name")?.length > 0 && (
+            <ClearInputButton
+              isSubmitting={isSubmitting}
+              onClick={() => {
+                setValue("name", "");
+                clearErrors("name");
+              }}
+            />
+          )}
+          {errors.name && (
+            <FormErrorMessage>{errors.name.message}</FormErrorMessage>
+          )}
+        </div>
+        <div className="relative flex flex-1 flex-col gap-1">
+          <Label
+            className="text-lg font-medium text-gray-800 dark:text-gray-200"
+            htmlFor="email"
+          >
+            Email
+          </Label>
+          <Input
+            disabled={isSubmitting}
+            id="email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "Does not match email format",
+              },
+            })}
+            placeholder="sample@gmail.com"
+            required
+            autoComplete="email"
+            className="rounded-lg border-2 border-gray-300 bg-background/80 px-4 py-3 text-lg text-gray-800 transition-all duration-200 placeholder:text-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
           />
-        )}
-        {errors.email && (
-          <FormErrorMessage>{errors.email.message}</FormErrorMessage>
-        )}
+          {watch("email")?.length > 0 && (
+            <ClearInputButton
+              isSubmitting={isSubmitting}
+              onClick={() => {
+                setValue("email", "");
+                clearErrors("email");
+              }}
+            />
+          )}
+          {errors.email && (
+            <FormErrorMessage>{errors.email.message}</FormErrorMessage>
+          )}
+        </div>
       </div>
-      <div className="relative flex flex-col gap-2">
-        <Label className="text-xl" htmlFor="subject">
+      <div className="relative flex flex-col gap-1">
+        <Label
+          className="text-lg font-medium text-gray-800 dark:text-gray-200"
+          htmlFor="subject"
+        >
           Subject
         </Label>
         <Input
@@ -147,7 +157,7 @@ export default function Form() {
           placeholder="Title of your message"
           required
           autoComplete="subject"
-          className="bg-input text-lg text-ellipsis"
+          className="rounded-lg border-2 border-gray-300 bg-background/80 px-4 py-3 text-lg text-gray-800 transition-all duration-200 placeholder:text-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
         />
         {watch("subject")?.length > 0 && (
           <ClearInputButton
@@ -162,8 +172,11 @@ export default function Form() {
           <FormErrorMessage>{errors.subject.message}</FormErrorMessage>
         )}
       </div>
-      <div className="relative flex w-full flex-col gap-2">
-        <Label className="text-xl" htmlFor="message">
+      <div className="relative flex w-full flex-col gap-1">
+        <Label
+          className="text-lg font-medium text-gray-800 dark:text-gray-200"
+          htmlFor="message"
+        >
           Message
         </Label>
         <Textarea
@@ -173,7 +186,7 @@ export default function Form() {
           {...register("message", { required: "Message is required" })}
           required
           autoComplete="message"
-          className="bg-input text-lg text-ellipsis"
+          className="min-h-20 resize-none rounded-lg border-2 border-gray-300 bg-background/80 px-4 py-3 text-lg text-gray-800 transition-all duration-200 placeholder:text-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
         />
         {watch("message")?.length > 0 && (
           <ClearInputButton
