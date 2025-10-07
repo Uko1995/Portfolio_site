@@ -25,12 +25,14 @@ import {
   SiSupabase,
   SiRender,
   SiTypescript,
+  SiNextdotjs,
 } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandVite } from "react-icons/tb";
 
 export const techStack = [
   { img: ImHtmlFive2, name: "HTML", section: "frontend", color: "#E34F26" },
+  { name: "NextJs", section: "frontend", img: SiNextdotjs, color: "#000000" },
   { img: IoLogoCss3, name: "CSS", section: "frontend", color: "#1572B6" },
   {
     img: SiJavascript,

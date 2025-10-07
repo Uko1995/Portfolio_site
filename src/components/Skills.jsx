@@ -48,7 +48,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background py-24 lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">

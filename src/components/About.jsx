@@ -52,7 +52,7 @@ export default function About() {
 
   return (
     <section
-      className="relative scroll-mt-24 overflow-hidden bg-gradient-to-br from-background via-muted/10 to-background py-24 lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
       id="about"
     >
       {/* Background Elements */}

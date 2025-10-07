@@ -24,12 +24,9 @@ export default function Introduction() {
 
   return (
     <section
-      className="relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-5 overflow-hidden px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-10"
+      className="relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-4 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-5"
       id="home"
     >
-      {/* Background gradient overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-
       {/* Image - appears first on mobile, second on desktop */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -39,15 +36,10 @@ export default function Introduction() {
         className="relative order-1 flex justify-center lg:order-2"
       >
         <div className="relative h-64 w-64 md:h-80 md:w-80 lg:me-10 lg:h-[28rem] lg:w-[28rem]">
-          {/* Animated background rings */}
-          <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-br from-primary/20 to-accent/20"></div>
-          <div className="absolute inset-4 animate-pulse rounded-full bg-gradient-to-br from-accent/30 to-primary/30 delay-75"></div>
-
           {/* Main image container */}
-          <div className="absolute inset-8 overflow-hidden rounded-full bg-gradient-to-br from-card via-background to-muted shadow-2xl ring-4 ring-white/20 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent"></div>
+          <div className="absolute inset-8 overflow-hidden rounded-2xl bg-gradient-to-br from-card via-background to-muted shadow-2xl">
             <img
-              className="relative z-10 h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+              className="relative z-10 h-full w-full object-cover"
               src="uko.webp"
               alt={`${PERSONAL_INFO.name} - ${PERSONAL_INFO.title}`}
               loading="eager"

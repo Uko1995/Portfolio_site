@@ -50,24 +50,24 @@
 
 :root {
   --radius: 0.75rem;
-  /* Modern Light Theme - Deep Navy & Electric Blue */
-  --background: oklch(0.98 0.005 240);
-  --foreground: oklch(0.15 0.08 240);
+  /* Clean White Theme */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.08 240);
+  --card-foreground: oklch(0.15 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.08 240);
+  --popover-foreground: oklch(0.15 0 0);
   --primary: oklch(0.55 0.25 260);
-  --primary-foreground: oklch(0.98 0.005 240);
-  --secondary: oklch(0.95 0.02 260);
-  --secondary-foreground: oklch(0.2 0.08 240);
-  --muted: oklch(0.96 0.01 240);
-  --muted-foreground: oklch(0.45 0.05 240);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.65 0.3 200);
-  --accent-foreground: oklch(0.98 0.005 240);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.25 15);
-  --border: oklch(0.9 0.01 240);
-  --input: oklch(0.97 0.005 240);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.97 0 0);
   --ring: oklch(0.55 0.25 260);
   --chart-1: oklch(0.6 0.25 330);
   --chart-2: oklch(0.65 0.25 200);
@@ -130,11 +130,7 @@
 
   body {
     @apply bg-background font-inter text-foreground;
-    background: linear-gradient(
-      135deg,
-      var(--background) 0%,
-      var(--muted) 100%
-    );
+    background: white;
   }
 }
 
