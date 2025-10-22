@@ -26,7 +26,7 @@ export default function Contacts() {
   return (
     <section
       id="contact"
-      className="relative flex min-h-screen scroll-mt-24 flex-col items-center justify-center bg-white px-4 py-24"
+      className="dark-transition relative flex min-h-screen scroll-mt-24 flex-col items-center justify-center bg-white px-4 py-24 dark:bg-gray-900"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

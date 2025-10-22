@@ -67,7 +67,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
+      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32 dark:bg-gray-900"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -88,17 +88,6 @@ export default function Projects() {
           >
             <span className="gradient-text">Featured Projects</span>
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg"
-          >
-            A collection of projects that showcase my skills in full-stack
-            development, backend architecture, and modern web technologies.
-          </motion.p>
         </div>
 
         {/* Projects Grid */}

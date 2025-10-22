@@ -16,18 +16,16 @@ const ViewMore = () => {
   };
 
   return (
-    <div className="mx-2 my-10 flex w-full flex-col items-center justify-center rounded-lg bg-muted px-2 py-6 text-primary/75 shadow-lg">
-      <h2 className="mb-4 text-2xl font-bold">Want to see more projects?</h2>
-
-      <div className="flex w-4/5 flex-col items-center gap-4 rounded-lg px-6 py-4 md:flex-row">
+    <div className="mx-2 my-10 flex w-full flex-col items-center justify-center text-primary/75">
+      <div className="rounded-base flex w-full flex-col items-center gap-2 md:flex-row">
         <Button
           style="px-4 rounded-full border border-transparent"
           type="info"
           size="lg"
           onClick={handleGithubClick}
         >
-          <FaSquareGithub size={20} />{" "}
-          <span className="text-base">View more</span>
+          <FaSquareGithub size={25} />{" "}
+          <span className="text-base md:text-lg">View more</span>
         </Button>
         <Button
           onClick={handleCollaborateClick}
@@ -35,7 +33,9 @@ const ViewMore = () => {
           style="px-4 border-2 border-muted-foreground  "
           type="other"
         >
-          <span className="text-base text-primary/75">Let's Collaborate</span>
+          <span className="text-base text-primary/75 md:text-lg">
+            Let's Collaborate
+          </span>
         </Button>
       </div>
     </div>

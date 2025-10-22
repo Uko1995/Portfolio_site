@@ -48,7 +48,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
+      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32 dark:bg-gray-900"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -69,21 +69,10 @@ export default function Skills() {
           >
             <span className="gradient-text">Skills & Technologies</span>
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg"
-          >
-            A comprehensive overview of my technical skills and the technologies
-            I use to bring ideas to life.
-          </motion.p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
@@ -105,7 +94,7 @@ export default function Skills() {
                   <h3 className="mb-3 text-lg font-bold text-foreground">
                     {category.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
+                  <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
                     {category.description}
                   </p>
                 </div>

@@ -34,10 +34,10 @@ export default function Header() {
 
   return (
     <section
-      className={`sticky top-4 z-50 mx-auto flex w-[95%] max-w-7xl items-center justify-between rounded-2xl border p-4 transition-all duration-300 md:w-[90%] ${
+      className={`dark-transition sticky top-4 z-50 mx-auto flex w-[95%] max-w-7xl items-center justify-between rounded-2xl border p-4 transition-all duration-300 md:w-[90%] ${
         isMenuOpen
-          ? "border-border/50 bg-background/99 shadow-2xl backdrop-blur-md"
-          : "border-border/30 bg-background/70 shadow-xl backdrop-blur-xl"
+          ? "border-border/50 bg-background/99 shadow-2xl backdrop-blur-md dark:border-gray-600 dark:bg-gray-800/99"
+          : "border-border/30 bg-background/70 shadow-xl backdrop-blur-xl dark:border-gray-600 dark:bg-gray-800/70"
       }`}
     >
       <a
@@ -106,7 +106,7 @@ export default function Header() {
             />
 
             {/* Mobile menu */}
-            <nav className="mobile-menu-enter absolute top-full right-0 left-0 z-50 mt-4 overflow-hidden rounded-2xl border border-border/50 bg-background/99 shadow-2xl backdrop-blur-md transition-all duration-300 lg:hidden">
+            <nav className="mobile-menu-enter dark-transition absolute top-full right-0 left-0 z-50 mt-4 overflow-hidden rounded-2xl border border-border/50 bg-background/99 shadow-2xl backdrop-blur-md transition-all duration-300 lg:hidden dark:bg-gray-800/99">
               {/* Header background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
 

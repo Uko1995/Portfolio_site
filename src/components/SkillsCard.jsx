@@ -15,7 +15,7 @@ export default function SkillsCard({
   titleNumber = 0,
 }) {
   return (
-    <Card className="card-hover group relative overflow-hidden border-0 bg-gradient-to-br from-card/80 to-muted/50 shadow-xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+    <Card className="card-hover group dark-transition relative overflow-hidden border-0 bg-gradient-to-br from-card/80 to-muted/50 shadow-xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl dark:from-gray-800/80 dark:to-gray-700/50">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 

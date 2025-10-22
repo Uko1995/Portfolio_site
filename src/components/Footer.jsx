@@ -49,7 +49,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-white">
+    <footer className="dark-transition relative overflow-hidden bg-white dark:bg-gray-900">
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="mx-auto max-w-7xl px-4 py-16 lg:py-20">

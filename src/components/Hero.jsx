@@ -24,7 +24,7 @@ export default function Introduction() {
 
   return (
     <section
-      className="relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-4 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-5"
+      className="dark-transition relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-4 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-1 dark:bg-gray-900"
       id="home"
     >
       {/* Image - appears first on mobile, second on desktop */}
@@ -37,10 +37,10 @@ export default function Introduction() {
       >
         <div className="relative h-64 w-64 md:h-80 md:w-80 lg:me-10 lg:h-[28rem] lg:w-[28rem]">
           {/* Main image container */}
-          <div className="absolute inset-8 overflow-hidden rounded-2xl bg-gradient-to-br from-card via-background to-muted shadow-2xl">
+          <div className="absolute">
             <img
-              className="relative z-10 h-full w-full object-cover"
-              src="uko.webp"
+              className="relative z-10 -ms-5 h-full w-full object-cover"
+              src="gummy-programming.svg"
               alt={`${PERSONAL_INFO.name} - ${PERSONAL_INFO.title}`}
               loading="eager"
               width="384"
@@ -83,10 +83,10 @@ export default function Introduction() {
           <div className="flex w-full max-w-lg items-center justify-center gap-3 md:justify-start">
             <Button type="outline" size="lg" onClick={handleScrollToProjects}>
               <Archive size={18} strokeWidth={2.5} />
-              <span className="text-sm md:text-base">Projects</span>
+              <span className="text-base md:text-lg">Projects</span>
             </Button>
             <Button type="primary" size="lg" onClick={handleScrollToContact}>
-              <span>Let's Connect</span>
+              <span className="text-base md:text-lg">Let's Connect</span>
             </Button>
           </div>
         </motion.div>

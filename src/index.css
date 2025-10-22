@@ -84,37 +84,37 @@
   --sidebar-ring: oklch(0.55 0.25 260);
 
   &.dark {
-    /* Modern Dark Theme - Rich Purples & Cyan Accents */
-    --background: oklch(0.08 0.02 270);
-    --foreground: oklch(0.95 0.01 240);
-    --card: oklch(0.12 0.03 270);
-    --card-foreground: oklch(0.95 0.01 240);
-    --popover: oklch(0.12 0.03 270);
-    --popover-foreground: oklch(0.95 0.01 240);
+    /* Modern Dark Theme - Dark Gray Background */
+    --background: #111827;
+    --foreground: #f9fafb;
+    --card: #1f2937;
+    --card-foreground: #f9fafb;
+    --popover: #1f2937;
+    --popover-foreground: #f9fafb;
     --primary: oklch(0.7 0.25 190);
-    --primary-foreground: oklch(0.08 0.02 270);
-    --secondary: oklch(0.18 0.04 270);
-    --secondary-foreground: oklch(0.9 0.01 240);
-    --muted: oklch(0.15 0.03 270);
-    --muted-foreground: oklch(0.65 0.05 240);
+    --primary-foreground: #111827;
+    --secondary: #374151;
+    --secondary-foreground: #f3f4f6;
+    --muted: #374151;
+    --muted-foreground: #9ca3af;
     --accent: oklch(0.75 0.25 300);
-    --accent-foreground: oklch(0.08 0.02 270);
+    --accent-foreground: #111827;
     --destructive: oklch(0.65 0.25 15);
-    --border: oklch(0.2 0.03 270);
-    --input: oklch(0.15 0.03 270);
+    --border: #374151;
+    --input: #374151;
     --ring: oklch(0.7 0.25 190);
     --chart-1: oklch(0.7 0.25 330);
     --chart-2: oklch(0.75 0.25 190);
     --chart-3: oklch(0.7 0.25 260);
     --chart-4: oklch(0.75 0.2 120);
     --chart-5: oklch(0.7 0.25 60);
-    --sidebar: oklch(0.12 0.03 270);
-    --sidebar-foreground: oklch(0.95 0.01 240);
+    --sidebar: #1f2937;
+    --sidebar-foreground: #f9fafb;
     --sidebar-primary: oklch(0.7 0.25 190);
-    --sidebar-primary-foreground: oklch(0.08 0.02 270);
-    --sidebar-accent: oklch(0.18 0.04 270);
-    --sidebar-accent-foreground: oklch(0.9 0.01 240);
-    --sidebar-border: oklch(0.2 0.03 270);
+    --sidebar-primary-foreground: #111827;
+    --sidebar-accent: #374151;
+    --sidebar-accent-foreground: #f3f4f6;
+    --sidebar-border: #374151;
     --sidebar-ring: oklch(0.7 0.25 190);
   }
 }
@@ -122,6 +122,10 @@
 @layer base {
   * {
     @apply scroll-smooth border-border outline-ring/50;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
   }
 
   html {
@@ -129,8 +133,18 @@
   }
 
   body {
-    @apply bg-background font-inter text-foreground;
+    @apply font-inter;
     background: white;
+    color: #1f2937;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+
+  body.dark,
+  .dark body {
+    background: #111827;
+    color: #f9fafb;
   }
 }
 
@@ -161,12 +175,31 @@
   }
 
   .card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      all 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
   }
 
   .card-hover:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Dark mode smooth transitions */
+  .dark-transition {
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
+  }
+
+  .dark-transition-fast {
+    transition:
+      background-color 0.2s ease-in-out,
+      color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
   }
 
   .bg-size-200 {

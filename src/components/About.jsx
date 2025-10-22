@@ -52,7 +52,7 @@ export default function About() {
 
   return (
     <section
-      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
+      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32 dark:bg-gray-900"
       id="about"
     >
       {/* Background Elements */}
@@ -74,16 +74,6 @@ export default function About() {
           >
             <span className="gradient-text">About Me</span>
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg"
-          >
-            Passionate about crafting digital experiences that make a difference
-          </motion.p>
         </div>
 
         {/* Main Content Grid */}

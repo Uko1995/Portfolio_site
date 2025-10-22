@@ -32,7 +32,6 @@ export default function Form() {
   });
 
   useEffect(() => {
-    console.log("EmailJS Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
@@ -73,7 +72,7 @@ export default function Form() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="flex w-full flex-col gap-3 p-3 text-xl font-semibold backdrop-blur-sm"
+      className="dark-transition flex w-full flex-col gap-3 p-3 text-xl font-semibold backdrop-blur-sm dark:text-white"
     >
       <div className="flex gap-3">
         <div className="relative flex flex-1 flex-col gap-1">
