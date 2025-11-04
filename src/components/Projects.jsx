@@ -35,11 +35,21 @@ const ProjectData = [
   {
     name: "FashionSmith",
     description:
-      "A complete custom menswear tailoring platform for a bespoke tailoring brand. ",
+      "A complete custom menswear tailoring platform for a bespoke tailoring brand with real-time customization and paystack integration.",
     image: "./fashionsmith.webp",
-    technologies: ["NodeJs", "ExpressJs", "MongoDB", "API Integration"],
+    technologies: ["NodeJs", "ExpressJs", "MongoDB", "React"],
     linkToGitHub: "https://github.com/Uko1995/FashionSmith",
     linkToLive: "https://fashion-smith.vercel.app",
+    type: "fullstack",
+  },
+  {
+    name: "ParentalPal",
+    description:
+      "A childcare booking platform. Features include multi-service booking forms with real-time pricing, admin analytics dashboard, Paystack payment integration, and Google OAuth. Optimized performance (Lighthouse 80+) with lazy loading and image optimization.",
+    image: "./parentalpalPortfolio.webp",
+    technologies: ["NextJs", "NextAuth.js", "MongoDB", "TypeScript"],
+    linkToGitHub: "https://github.com/Uko1995/parental-pal",
+    linkToLive: "https://www.parentalpal.org",
     type: "fullstack",
   },
   {
