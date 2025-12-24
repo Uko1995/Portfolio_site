@@ -77,7 +77,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32 dark:bg-gray-900"
+      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-28 dark:bg-gray-900"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">

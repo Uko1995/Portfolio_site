@@ -64,7 +64,7 @@ export default function About() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Header Section */}
-        <div className="mb-20 text-center">
+        <div className="mb-15 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

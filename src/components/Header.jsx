@@ -9,7 +9,7 @@ import {
   X,
 } from "lucide-react";
 import { BsWindowSidebar } from "react-icons/bs";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Button from "./Button";
 import MapPin from "./MapPin";
