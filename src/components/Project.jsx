@@ -49,21 +49,23 @@ export default function Project({ project }) {
             <SkillName key={skill} skill={skill} />
           ))}
         </div>
-        <div className="mt-3 flex items-center justify-center gap-4">
+        <div className="mt-4 flex flex-col gap-3 lg:flex-row lg:gap-4">
           <button
             onClick={() => window.open(linkToGitHub, "_blank")}
-            className="flex h-10 w-10 items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-md dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:border-primary"
             aria-label="View GitHub Repository"
           >
-            <FaSquareGithub className="size-8 text-foreground dark:text-white" />
+            <FaSquareGithub className="size-5" />
+            <span>View Code</span>
           </button>
           {linkToLive && (
             <button
               onClick={() => window.open(linkToLive, "_blank")}
-              className="flex h-10 w-10 items-center justify-center transition-all duration-300 hover:scale-105"
+              className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-primary bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md dark:border-blue-500 dark:bg-blue-600"
               aria-label="View Live Demo"
             >
-              <FaArrowUpRightFromSquare className="size-6 text-primary dark:text-blue-400" />
+              <FaArrowUpRightFromSquare className="size-4" />
+              <span>Live Demo</span>
             </button>
           )}
         </div>

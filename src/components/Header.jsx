@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <section
-      className={`dark-transition sticky top-4 z-50 mx-auto flex w-[95%] max-w-7xl items-center justify-between rounded-2xl border p-4 transition-all duration-300 md:w-[90%] ${
+      className={`dark-transition sticky top-2 z-50 mx-auto flex w-[95%] max-w-7xl items-center justify-between rounded-2xl border p-4 transition-all duration-300 md:w-[90%] ${
         isMenuOpen
           ? "border-border/50 bg-background/99 shadow-2xl backdrop-blur-md dark:border-gray-600 dark:bg-gray-800/99"
           : "border-border/30 bg-background/70 shadow-xl backdrop-blur-xl dark:border-gray-600 dark:bg-gray-800/70"

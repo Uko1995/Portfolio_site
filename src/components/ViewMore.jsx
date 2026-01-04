@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./Button";
-import { FaSquareGithub } from "react-icons/fa6";
 import { useScrollTo } from "@/hooks/useUtilities";
 import { PERSONAL_INFO } from "@/config/constants";
 
@@ -16,24 +15,25 @@ const ViewMore = () => {
   };
 
   return (
-    <div className="mx-2 my-10 flex w-full flex-col items-center justify-center text-primary/75">
-      <div className="rounded-base flex w-full flex-col items-center gap-2 md:flex-row">
+    <div className="flex w-full items-center justify-center">
+      <div className="flex w-full max-w-md flex-col gap-4 lg:max-w-none lg:flex-row lg:justify-center lg:gap-5">
         <Button
-          style="px-4 rounded-full border border-transparent"
+          style="px-6 py-3 rounded-full border-2 border-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full lg:w-auto flex items-center justify-center"
           type="info"
           size="lg"
           onClick={handleGithubClick}
         >
-          <FaSquareGithub size={25} />{" "}
-          <span className="text-base md:text-lg">View more</span>
+          <span className="text-base font-semibold md:text-lg">
+            View More Projects
+          </span>
         </Button>
         <Button
           onClick={handleCollaborateClick}
           size="lg"
-          style="px-4 border-2 border-muted-foreground  "
+          style="px-6 py-3 rounded-full border-2 border-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full lg:w-auto flex items-center justify-center"
           type="other"
         >
-          <span className="text-base text-primary/75 md:text-lg">
+          <span className="text-base font-semibold text-primary md:text-lg">
             Let's Collaborate
           </span>
         </Button>

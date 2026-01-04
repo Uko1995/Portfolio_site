@@ -10,11 +10,83 @@ const ProjectData = [
     description:
       "A personal portfolio website designed to highlight my projects, skills, and experience.",
     image: "./portfolio.webp",
-    technologies: ["React", "TailwindCSS", "Vite", "Responsive Web Design"],
+    technologies: [
+      "React",
+      "TailwindCSS",
+      "Vite",
+      "Framer Motion",
+      "Responsive Web Design",
+    ],
     linkToGitHub:
       "https://github.com/Uko1995/Portfolio_site/tree/master/client",
     linkToLive: "https://uko-uwatt-portfolio-site-psi-seven.vercel.app/",
     type: "frontend",
+  },
+  {
+    name: "The Mastery House",
+    description:
+      "A private mentorship and mastery academy for discerning families raising future-ready children",
+    image: "./TheMastery.webp",
+    technologies: [
+      "React",
+      "TailwindCSS",
+      "Vite",
+      "Responsive Web Design",
+      "Framer Motion",
+      "Serverless Functions",
+      "Responsive Web Design",
+    ],
+    linkToGitHub: "https://github.com/Uko1995/the-mastery-house",
+    linkToLive: "https://the-mastery-house.vercel.app/",
+    type: "frontend",
+  },
+  {
+    name: "FashionSmith",
+    description:
+      "A complete custom menswear tailoring platform for a bespoke tailoring brand with real-time customization and paystack integration.",
+    image: "./fashionsmith.webp",
+    technologies: [
+      "NodeJs",
+      "ExpressJs",
+      "MongoDB",
+      "React",
+      "TailwindCSS",
+      "Paystack Integration",
+      "Framer Motion",
+      "Responsive Web Design",
+    ],
+    linkToGitHub: "https://github.com/Uko1995/FashionSmith",
+    linkToLive: "https://fashion-smith.vercel.app",
+    type: "fullstack",
+  },
+  {
+    name: "ParentalPal",
+    description:
+      "A childcare booking platform. Features include multi-service booking forms with real-time pricing, admin analytics dashboard, Paystack payment integration, and Google OAuth. Optimized performance (Lighthouse 80+) with lazy loading and image optimization.",
+    image: "./parentalpalPortfolio.webp",
+    technologies: [
+      "NextJs",
+      "NextAuth.js",
+      "MongoDB",
+      "TypeScript",
+      "Framer Motion",
+      "TailwindCSS",
+      "Paystack Integration",
+      "Responsive Web Design",
+    ],
+    linkToGitHub: "https://github.com/Uko1995/parental-pal",
+    linkToLive: "https://www.parentalpal.org",
+    type: "fullstack",
+  },
+  {
+    name: "Musical",
+    description:
+      "A media streaming platform that enables users to search, discover, and play music and videos in real time.",
+    image: "./musical.webp",
+    technologies: ["Python", "Flask", "Bootstrap", "API Integration"],
+    linkToGitHub: "https://github.com/Uko1995/Musical",
+    linkToLive: "https://musical-1-ll7p.onrender.com/",
+    type: "fullstack",
   },
   {
     name: "ParentPal",
@@ -33,36 +105,6 @@ const ProjectData = [
     type: "backend",
   },
   {
-    name: "FashionSmith",
-    description:
-      "A complete custom menswear tailoring platform for a bespoke tailoring brand with real-time customization and paystack integration.",
-    image: "./fashionsmith.webp",
-    technologies: ["NodeJs", "ExpressJs", "MongoDB", "React"],
-    linkToGitHub: "https://github.com/Uko1995/FashionSmith",
-    linkToLive: "https://fashion-smith.vercel.app",
-    type: "fullstack",
-  },
-  {
-    name: "ParentalPal",
-    description:
-      "A childcare booking platform. Features include multi-service booking forms with real-time pricing, admin analytics dashboard, Paystack payment integration, and Google OAuth. Optimized performance (Lighthouse 80+) with lazy loading and image optimization.",
-    image: "./parentalpalPortfolio.webp",
-    technologies: ["NextJs", "NextAuth.js", "MongoDB", "TypeScript"],
-    linkToGitHub: "https://github.com/Uko1995/parental-pal",
-    linkToLive: "https://www.parentalpal.org",
-    type: "fullstack",
-  },
-  {
-    name: "Musical",
-    description:
-      "A media streaming platform that enables users to search, discover, and play music and videos in real time.",
-    image: "./musical.webp",
-    technologies: ["Python", "Flask", "Bootstrap", "API Integration"],
-    linkToGitHub: "https://github.com/Uko1995/Musical",
-    linkToLive: "https://musical-1-ll7p.onrender.com/",
-    type: "fullstack",
-  },
-  {
     name: "Simple Shell",
     description: "This is an adaptation of the UNIX command line interpreter.",
     image: "./screen.webp",
@@ -77,27 +119,37 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-28 dark:bg-gray-900"
+      className="dark-transition relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32 dark:bg-gray-900"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 size-72 rounded-full bg-primary/5 blur-3xl"></div>
-        <div className="absolute right-10 bottom-20 size-96 rounded-full bg-accent/5 blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/5 blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-10 -left-20 size-96 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute top-1/3 -right-20 size-[32rem] rounded-full bg-accent/10 blur-3xl"></div>
+        <div className="absolute -bottom-10 left-1/3 size-80 rounded-full bg-secondary/10 blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="mb-20 text-center">
+        <div className="mb-16 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl"
+            className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl"
           >
             <span className="gradient-text">Featured Projects</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base"
+          >
+            A curated collection of my best work showcasing full-stack
+            development expertise
+          </motion.p>
         </div>
 
         {/* Projects Grid */}
@@ -106,7 +158,7 @@ export default function Projects() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10"
         >
           {ProjectData.map((project, index) => (
             <motion.div
@@ -132,19 +184,21 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto mt-20 w-3/4 text-center"
+          className="mx-auto mt-20 max-w-4xl"
         >
           <div className="relative">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 blur-xl"></div>
-            <div className="relative rounded-2xl border border-border/50 bg-card/50 px-12 py-10 shadow-2xl backdrop-blur-sm">
-              <h3 className="mb-6 text-xl font-bold text-foreground md:text-2xl">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 blur-2xl"></div>
+            <div className="relative rounded-3xl border border-border/50 bg-card/80 px-8 py-12 shadow-2xl backdrop-blur-sm sm:px-12 sm:py-14">
+              <h3 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
                 Want to see more?
               </h3>
-              <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
+              <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-muted-foreground md:text-base">
                 Explore my complete portfolio and discover more projects that
                 demonstrate my passion for creating innovative solutions.
               </p>
-              <ViewMore />
+              <div className="flex justify-center">
+                <ViewMore />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -155,7 +209,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-4"
+          className="mt-20 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4"
         >
           {[
             { number: "5+", label: "Projects Completed" },
@@ -169,14 +223,14 @@ export default function Projects() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               viewport={{ once: true }}
-              className="text-center"
+              className="group text-center"
             >
-              <div className="mb-4 inline-flex size-16 items-center justify-center rounded-2xl bg-primary/10">
-                <span className="text-2xl font-bold text-primary">
+              <div className="mb-4 inline-flex size-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                <span className="bg-gradient-to-br from-primary to-accent bg-clip-text text-3xl font-bold text-transparent">
                   {stat.number}
                 </span>
               </div>
-              <p className="text-sm font-medium text-muted-foreground">
+              <p className="text-xs font-medium text-muted-foreground md:text-sm">
                 {stat.label}
               </p>
             </motion.div>

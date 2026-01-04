@@ -24,7 +24,7 @@ export default function Introduction() {
 
   return (
     <section
-      className="dark-transition relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-4 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-1 dark:bg-gray-900"
+      className="dark-transition relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-2 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-1 dark:bg-gray-900"
       id="home"
     >
       {/* Image - appears first on mobile, second on desktop */}
