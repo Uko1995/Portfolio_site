@@ -60,6 +60,22 @@ const ProjectData = [
     type: "fullstack",
   },
   {
+    name: "Workstart",
+    description:
+      "WorkStart is a career launchpad for aspiring tech professionals. We offer free learning paths, hands-on projects, mentorship, and portfolio-building tools to help individuals become job‑ready.",
+    image: "./workstart.png",
+    technologies: [
+      "PostgresSQL",
+      "NextJs",
+      "TailwindCSS",
+      "Paystack Integration",
+      "Responsive Web Design",
+    ],
+    linkToGitHub: "",
+    linkToLive: "https://www.workstart.app",
+    type: "fullstack",
+  },
+  {
     name: "ParentalPal",
     description:
       "A childcare booking platform. Features include multi-service booking forms with real-time pricing, admin analytics dashboard, Paystack payment integration, and Google OAuth. Optimized performance (Lighthouse 80+) with lazy loading and image optimization.",

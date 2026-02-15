@@ -4,9 +4,25 @@ import { Calendar, MapPin, Building2, ChevronRight } from "lucide-react";
 const experienceData = [
   {
     id: 1,
+    title: "FrontEnd Developer",
+    company: "Bluebow",
+    period: "January 2025 – Present",
+    location: "Remote",
+    achievements: [
+      "Spearheaded comprehensive refactoring of legacy codebases for both Workstart and MyAgroPadi platforms, modernizing component architecture, eliminating technical debt, and improving code maintainability by implementing consistent design patterns and best practices.",
+      "Translated high-fidelity Figma designs into pixel-perfect, production-ready React components with precise attention to typography, spacing, color systems, and interactive states, ensuring seamless design-to-code handoff and brand consistency across both applications.",
+      "Engineered performance optimizations that improved application load times by 40% through strategic code splitting, lazy loading, image optimization with Next.js Image component, bundle size reduction, and implementing efficient React rendering patterns (memoization, virtualization).",
+      "Architected and developed fully responsive web applications supporting seamless experiences across mobile, tablet, and desktop devices using modern CSS techniques (Flexbox, Grid), Tailwind CSS responsive utilities, and mobile-first design principles.",
+      "Implemented advanced frontend features including dynamic form validation, real-time data updates, interactive dashboards, custom animations using Framer Motion, and intuitive user interfaces with smooth transitions and micro-interactions.",
+      "Collaborated with cross-functional teams to integrate RESTful APIs, manage application state with React hooks and context, implement authentication flows, and ensure type safety using TypeScript strict mode throughout the codebase.",
+      "Established frontend development workflows with ESLint/Prettier configurations, component documentation, reusable UI libraries, Git version control best practices, and comprehensive code reviews to maintain high code quality standards.",
+    ],
+  },
+  {
+    id: 1,
     title: "Backend Developer",
     company: "BalmConn",
-    period: "November 2025 – Present",
+    period: "November 2025 – January 2026",
     location: "Remote",
     achievements: [
       "Architected and developed a production-ready RESTful API serving 15+ feature modules with 100+ endpoints for a medical social platform, implementing modular service-oriented architecture with TypeScript strict mode and comprehensive error handling (interface → model → validation → service → controller → route).",

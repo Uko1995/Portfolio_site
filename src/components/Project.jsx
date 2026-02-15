@@ -50,14 +50,16 @@ export default function Project({ project }) {
           ))}
         </div>
         <div className="mt-4 flex flex-col gap-3 lg:flex-row lg:gap-4">
-          <button
-            onClick={() => window.open(linkToGitHub, "_blank")}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-md dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:border-primary"
-            aria-label="View GitHub Repository"
-          >
-            <FaSquareGithub className="size-5" />
-            <span>View Code</span>
-          </button>
+          {linkToGitHub && (
+            <button
+              onClick={() => window.open(linkToGitHub, "_blank")}
+              className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-md dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:border-primary"
+              aria-label="View GitHub Repository"
+            >
+              <FaSquareGithub className="size-5" />
+              <span>View Code</span>
+            </button>
+          )}
           {linkToLive && (
             <button
               onClick={() => window.open(linkToLive, "_blank")}
