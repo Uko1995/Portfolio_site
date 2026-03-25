@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 
 import Button from "./Button";
 import AnimatedTypewriter from "./AnimatedTypewriter";
-import { useScrollTo, useFileDownload } from "@/hooks/useUtilities";
+import { useScrollTo } from "@/hooks/useUtilities";
 import { PERSONAL_INFO } from "@/config/constants";
 
 export default function Introduction() {
   const scrollToElement = useScrollTo();
-  const downloadFile = useFileDownload();
+  void motion; // Ensures ESLint sees `motion` as used (JSX member tags can be missed).
 
   const handleScrollToProjects = () => {
     scrollToElement("projects");
@@ -18,22 +18,33 @@ export default function Introduction() {
     scrollToElement("contact");
   };
 
-  const handleResumeDownload = () => {
-    downloadFile("/Uko_Uwatt.pdf", "Uko_Uwatt.pdf");
-  };
-
   return (
     <section
-      className="dark-transition relative -mt-10 flex max-h-dvh w-full flex-col items-center justify-center gap-2 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-1 dark:bg-gray-900"
+      className="dark-transition relative -mt-16 flex max-h-dvh w-full flex-col items-center justify-center gap-2 overflow-hidden bg-white px-4 pt-24 pb-20 md:min-h-screen lg:flex-row lg:gap-1 dark:bg-gray-900"
       id="home"
     >
+      {/* Decorative grid + color accents (kept behind content for performance). */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 bottom-0 left-0 z-0 h-[85%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_35%,black_100%)]"
+      >
+        {/* Subtle base grid */}
+        <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(17,24,39,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,24,39,0.06)_1px,transparent_1px)] [background-size:32px_32px] opacity-70 dark:[background-image:linear-gradient(to_right,rgba(156,163,175,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(156,163,175,0.16)_1px,transparent_1px)] dark:opacity-100" />
+
+        {/* Darker "major" grid cells */}
+        <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(17,24,39,0.10)_2px,transparent_2px),linear-gradient(to_bottom,rgba(17,24,39,0.10)_2px,transparent_2px)] [background-size:160px_160px] opacity-90 dark:[background-image:linear-gradient(to_right,rgba(156,163,175,0.24)_2px,transparent_2px),linear-gradient(to_bottom,rgba(156,163,175,0.24)_2px,transparent_2px)]" />
+
+        {/* Color accents that match your primary/accent scheme */}
+        <div className="absolute inset-0 opacity-80 [background:radial-gradient(circle_at_15%_10%,rgba(124,58,237,0.16),transparent_45%),radial-gradient(circle_at_85%_20%,rgba(14,165,233,0.12),transparent_50%),radial-gradient(circle_at_50%_75%,rgba(124,58,237,0.10),transparent_55%)] dark:opacity-60 dark:[background:radial-gradient(circle_at_15%_10%,rgba(124,58,237,0.22),transparent_48%),radial-gradient(circle_at_85%_20%,rgba(14,165,233,0.16),transparent_52%),radial-gradient(circle_at_50%_75%,rgba(124,58,237,0.16),transparent_58%)]" />
+      </div>
+
       {/* Image - appears first on mobile, second on desktop */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="relative order-1 flex justify-center lg:order-2"
+        className="relative z-10 order-1 flex justify-center lg:order-2"
       >
         <div className="relative h-64 w-64 md:h-80 md:w-80 lg:me-10 lg:h-[28rem] lg:w-[28rem]">
           {/* Main image container */}

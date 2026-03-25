@@ -6,23 +6,6 @@ import ViewMore from "./ViewMore";
 
 const ProjectData = [
   {
-    name: "Portfolio Website",
-    description:
-      "A personal portfolio website designed to highlight my projects, skills, and experience.",
-    image: "./portfolio.webp",
-    technologies: [
-      "React",
-      "TailwindCSS",
-      "Vite",
-      "Framer Motion",
-      "Responsive Web Design",
-    ],
-    linkToGitHub:
-      "https://github.com/Uko1995/Portfolio_site/tree/master/client",
-    linkToLive: "https://uko-uwatt-portfolio-site-psi-seven.vercel.app/",
-    type: "frontend",
-  },
-  {
     name: "The Mastery House",
     description:
       "A private mentorship and mastery academy for discerning families raising future-ready children",
@@ -95,19 +78,44 @@ const ProjectData = [
     type: "fullstack",
   },
   {
-    name: "Musical",
+    name: "MyAgropadi",
     description:
-      "A media streaming platform that enables users to search, discover, and play music and videos in real time.",
-    image: "./musical.webp",
-    technologies: ["Python", "Flask", "Bootstrap", "API Integration"],
-    linkToGitHub: "https://github.com/Uko1995/Musical",
-    linkToLive: "https://musical-1-ll7p.onrender.com/",
+      " An Agritech company fostering sustainable growth by connecting farmers to international markets, equipping struggling farmers with land and infrastructure, delivering expert training, and supporting future agriculturists through educational scholarships.",
+    image: "./agropadi.png",
+    technologies: [
+      "NextJs",
+      "TailwindCSS",
+      "TypeScript",
+      "PostgreSQL",
+      "Paystack Integration",
+      "Responsive Web Design",
+      "API Integration",
+    ],
+    linkToGitHub: "",
+    linkToLive: "https://www.myagropadi.com/",
     type: "fullstack",
   },
   {
-    name: "ParentPal",
+    name: "Bluebow Research Consultancy",
     description:
-      "A web application that connects parents with local tutors using a location-based and ratings recommendation algorithm.",
+      "At Bluebow, we help businesses, brands, and individuals bridge the gap between strategy and execution. From concept development to digital transformation, our team provides expert guidance to bring your goals to life — with clarity, precision, and measurable results",
+    image: "./bluebow.png",
+    technologies: [
+      "NextJs",
+      "TailwindCSS",
+      "TypeScript",
+      "PostgreSQL",
+      "Paystack Integration",
+      "Responsive Web Design",
+    ],
+    linkToGitHub: "",
+    linkToLive: "https://www.bluebowrc.com/",
+    type: "fullstack",
+  },
+  {
+    name: "ParentPal API",
+    description:
+      "A web application API that connects parents with local tutors using a location-based and ratings recommendation algorithm.",
     image: "./screen.webp",
     technologies: [
       "NodeJs",
